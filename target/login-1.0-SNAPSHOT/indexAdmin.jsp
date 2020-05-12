@@ -30,5 +30,8 @@
                 }
             %>
         <h1>Index Administradores</h1>
+         <form action="llegirCSVServlet" method="GET">
+            <input type="submit" value="LlegirCSV" />
+        </form>
     </body>
 </html>

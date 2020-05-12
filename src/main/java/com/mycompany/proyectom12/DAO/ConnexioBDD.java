@@ -13,23 +13,3 @@ public class ConnexioBDD {
 		return myConn;
 	}
 }
-		
-		
-	   //Posar tot aix� al fitxer ClientDAO
-	   /*
-	   //create statement
-	   Statement myStmt = myConn.createStatement();
-	   
-	   String sql = "Select * from clients";
-	   //execute sql query
-	   ResultSet myRs = myStmt.executeQuery(sql);
-	
-	   myConn.close();
-	   //results set
-	   while (myRs.next()) {
-	    System.out.println(myRs.getString("COL 1")+ " , "+myRs.getString("COL 2")+ " , "+myRs.getString("COL 3") +" , "+myRs.getString("COL 4"));
-	   }
-	   myRs.close();
-	   myStmt.close();
-	   myConn.close();
-	  */
