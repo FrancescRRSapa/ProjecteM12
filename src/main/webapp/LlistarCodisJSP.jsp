@@ -22,9 +22,10 @@
 <table width="100%" border="1" cellpadding="0" cellspacing="2" style="border-collapse:separate;border-spacing:2px;border-color:#ddd;">
 <%
 ArrayList<CodiPreTestMOS> preTestMOS =(ArrayList<CodiPreTestMOS>) request.getAttribute("PreTestMOS");
-ArrayList<CodiPreTestMTA> preTestMTA =(ArrayList<CodiPreTestMTA>) request.getAttribute("PreTestMTA");
-ArrayList<CodiTestMOS> testMOS =(ArrayList<CodiTestMOS>) request.getAttribute("TestMOS");
+//ArrayList<CodiPreTestMTA> preTestMTA =(ArrayList<CodiPreTestMTA>) request.getAttribute("PreTestMTA");
+//ArrayList<CodiTestMOS> testMOS =(ArrayList<CodiTestMOS>) request.getAttribute("TestMOS");
 out.print("PreTestMOS");
+if(preTestMOS != null){
 for(int i=0;i< preTestMOS.size();i++) {
 %>
 	<tr>
@@ -35,29 +36,11 @@ for(int i=0;i< preTestMOS.size();i++) {
 	</tr>
 <%
 }
-out.print("PreTestMTA");
-for(int i=0;i< preTestMTA.size();i++) {
-%>
-	<tr>
-        <td>HOLA</td>
-	<td><%out.print((String) preTestMTA.get(i).getUsuari());%></td>
-	<td><%out.print((String) preTestMTA.get(i).getPassword());%></td>
-	<td><%out.print((String) preTestMTA.get(i).getPracticeTest());%></td>
-	</tr>
-<%
-}
-out.print("TestMOS");
-for(int i=0;i< testMOS.size();i++) {
-%>
-	<tr>
-        <td>HOLA</td>
-	<td><%out.print((String) testMOS.get(i).getUsuari());%></td>
-	<td><%out.print((String) testMOS.get(i).getPassword());%></td>
-	<td><%out.print((String) testMOS.get(i).getPracticeTest());%></td>
-        <td><%out.print((String) testMOS.get(i).getCodiExamen());%></td>
-	</tr>
-<%
 }
 %>
+<div><form method="post" action="llegirCSVServlet" enctype="multipart/form-data">
+    CSV File:<input type="file" name="file" id="file">
+    <input type="submit" value="Enviar" name="Enviar">
+    </form></div>
 </table>
 </html>

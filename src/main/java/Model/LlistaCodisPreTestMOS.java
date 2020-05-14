@@ -6,6 +6,8 @@
 package Model;
 import llegircsv.*;
 import Model.Codi;
+import java.io.File;
+import java.io.InputStream;
 import llegircsv.LlegirCSV;
 import java.util.ArrayList;
 /**
@@ -14,10 +16,10 @@ import java.util.ArrayList;
  */
 public class LlistaCodisPreTestMOS {
     ArrayList<CodiPreTestMOS> llistaPreTestMOS = new ArrayList<CodiPreTestMOS>();
-    String path = "C:\\Users\\ferna\\Documents\\ProjecteM12\\ProjecteM12\\src\\main\\java\\llegircsv\\codisPreTest.csv";
+    //String path = "C:\\Users\\ferna\\Documents\\ProjecteM12\\ProjecteM12\\src\\main\\java\\llegircsv\\codisPreTest.csv";
     
-    public ArrayList<CodiPreTestMOS> llegirCodis(){
-        ArrayList<String[]> llistaCodis = (ArrayList<String[]>) LlegirCSV.llegirDades(path);
+    public ArrayList<CodiPreTestMOS> llegirCodis(InputStream file){
+        ArrayList<String[]> llistaCodis = (ArrayList<String[]>) LlegirCSV.llegirDades(file);
             for(int i = 0; i < llistaCodis.size(); i++) {
                 CodiPreTestMOS codi1 = new CodiPreTestMOS(llistaCodis.get(i)[0],llistaCodis.get(i)[1], llistaCodis.get(i)[2]);
                 llistaPreTestMOS.add(codi1);

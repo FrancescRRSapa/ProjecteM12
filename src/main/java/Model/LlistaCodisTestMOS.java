@@ -13,6 +13,7 @@ import llegircsv.LlegirCSV;
  * @author ferna
  */
 public class LlistaCodisTestMOS {
+    /*
     ArrayList<CodiTestMOS> llistaTestMOS = new ArrayList<CodiTestMOS>();
     String path = "C:\\Users\\ferna\\Documents\\ProjecteM12\\ProjecteM12\\src\\main\\java\\llegircsv\\codisTest.csv";
     
@@ -28,4 +29,5 @@ public class LlistaCodisTestMOS {
     public void afegirCodi(CodiTestMOS codi){
         llistaTestMOS.add(codi);
     }
+*/
 }

@@ -13,6 +13,7 @@ import llegircsv.LlegirCSV;
  * @author ferna
  */
 public class LlistaCodisPreTestMTA {
+    /*
     ArrayList<CodiPreTestMTA> llistaPreTestMTA = new ArrayList<CodiPreTestMTA>();
     String path = "C:\\Users\\ferna\\Documents\\ProjecteM12\\ProjecteM12\\src\\main\\java\\llegircsv\\codisPreTest.csv";
     
@@ -28,4 +29,5 @@ public class LlistaCodisPreTestMTA {
     public void afegirCodi(CodiPreTestMTA codi){
         llistaPreTestMTA.add(codi);
     }
+*/
 }

@@ -18,14 +18,18 @@ import Model.Codi;
 import Model.LlistaCodisPreTestMOS;
 import Model.LlistaCodisPreTestMTA;
 import Model.LlistaCodisTestMOS;
+import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author Francesc
  */
 @WebServlet(name = "llegirCSVServlet", urlPatterns = {"/llegirCSVServlet"})
+@MultipartConfig
 public class llegirCSVServlet extends HttpServlet {
 
     /**
@@ -77,12 +81,12 @@ public class llegirCSVServlet extends HttpServlet {
         }
         */
         LlistaCodisPreTestMOS llistatCodisPreTestMOS = new LlistaCodisPreTestMOS();
-        LlistaCodisTestMOS llistatCodisTestMOS = new LlistaCodisTestMOS();
-        LlistaCodisPreTestMTA llistatCodisPreTestMTA = new LlistaCodisPreTestMTA();
-        
-        request.setAttribute("TestMOS", llistatCodisTestMOS.llegirCodis());
-        request.setAttribute("PreTestMOS", llistatCodisPreTestMOS.llegirCodis());
-        request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
+        //LlistaCodisTestMOS llistatCodisTestMOS = new LlistaCodisTestMOS();
+        //LlistaCodisPreTestMTA llistatCodisPreTestMTA = new LlistaCodisPreTestMTA();
+     
+        //request.setAttribute("TestMOS", llistatCodisTestMOS.llegirCodis());
+        //request.setAttribute("PreTestMOS", llistatCodisPreTestMOS.llegirCodis());
+        //request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
         request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
     }
 
@@ -98,6 +102,15 @@ public class llegirCSVServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
+        LlistaCodisPreTestMOS llistatCodisPreTestMOS = new LlistaCodisPreTestMOS();
+        //LlistaCodisTestMOS llistatCodisTestMOS = new LlistaCodisTestMOS();
+        //LlistaCodisPreTestMTA llistatCodisPreTestMTA = new LlistaCodisPreTestMTA();
+        Part filePart = request.getPart("file");       
+        //request.setAttribute("TestMOS", llistatCodisTestMOS.llegirCodis());
+        InputStream fileContent = filePart.getInputStream();
+        request.setAttribute("PreTestMOS", llistatCodisPreTestMOS.llegirCodis(fileContent));
+        //request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
+        request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
     }
 
     /**

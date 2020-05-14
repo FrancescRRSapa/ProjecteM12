@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -16,14 +18,13 @@ import java.util.ArrayList;
  * @author Francesc
  */
 public class LlegirCSV {
-    public static ArrayList<String[]> llegirDades (String path) {
+    public static ArrayList<String[]> llegirDades (InputStream file) {
         ArrayList<String[]> tota_linia = new ArrayList<String[]>();
         //ArrayList<String> tota_linia = new ArrayList<String>();
 
         //Faig un sol arraylist per tots els camps que llegirem perque no sabem quants tindrem depenen de si necessitem
         //llegir el fitxer de clients o de vehicles o lloguers?
-
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(file))) {
             String line;   
             while ((line = br.readLine()) != null) {
                 String[] valorsSeparats = line.split(";");
