@@ -14,9 +14,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import com.mycompany.llegircsv.Codi;
-import com.mycompany.llegircsv.llistaCodis;
-import com.mycompany.proyectom12.DAO.CodisDAO;
+import Model.Codi;
+import Model.LlistaCodisPreTestMOS;
+import Model.LlistaCodisPreTestMTA;
+import Model.LlistaCodisTestMOS;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -65,6 +66,7 @@ public class llegirCSVServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        /*
         try {
             //processRequest(request, response);
             CodisDAO.inserirCodis();
@@ -73,8 +75,14 @@ public class llegirCSVServlet extends HttpServlet {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(llegirCSVServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        llistaCodis llistatCodis = new llistaCodis();
-        request.setAttribute("codis", llistatCodis.llegirCodis());
+        */
+        LlistaCodisPreTestMOS llistatCodisPreTestMOS = new LlistaCodisPreTestMOS();
+        LlistaCodisTestMOS llistatCodisTestMOS = new LlistaCodisTestMOS();
+        LlistaCodisPreTestMTA llistatCodisPreTestMTA = new LlistaCodisPreTestMTA();
+        
+        request.setAttribute("TestMOS", llistatCodisTestMOS.llegirCodis());
+        request.setAttribute("PreTestMOS", llistatCodisPreTestMOS.llegirCodis());
+        request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
         request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
     }
 

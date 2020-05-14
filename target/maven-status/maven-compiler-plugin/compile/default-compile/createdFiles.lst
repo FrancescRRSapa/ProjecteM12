@@ -1,1 +1,11 @@
-com\mycompany\login\Conexion.class
+Model\LlistaCodisPreTestMOS.class
+Model\CodiTestMOS.class
+DAO\ConnexioBDD.class
+llegircsv\LlegirCSV.class
+Model\Codi.class
+Model\CodiPreTestMOS.class
+Model\CodiPreTestMTA.class
+Model\LlistaCodisTestMOS.class
+Model\LlistaCodisPreTestMTA.class
+login\Conexion.class
+DAO\LoginDAO.class

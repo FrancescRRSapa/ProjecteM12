@@ -21,12 +21,12 @@
             if(sesion.getAttribute("user")!= null && sesion.getAttribute("tipusUsuari")!= null){
                 usuario = sesion.getAttribute("user").toString();
                 tipusUsuari = sesion.getAttribute("tipusUsuari").toString();
-                out.print("<a href='login.jsp?cerrar=true'><h5>Cerrar Session " + usuario +"</h5></a> ");
+                out.print("<a href='index.jsp?cerrar=true'><h5>Cerrar Session " + usuario +"</h5></a> ");
                 if(tipusUsuari != "administrador"){
-                    response.sendRedirect("login.jsp?cerrar=true");
+                    response.sendRedirect("index.jsp?cerrar=true");
                 }
             }else{
-                out.print("<script>location.replace('login.jsp');</script>");
+                out.print("<script>location.replace('index.jsp');</script>");
                 }
             %>
         <h1>Index Administradores</h1>
