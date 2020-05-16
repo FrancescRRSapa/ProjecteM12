@@ -9,10 +9,10 @@ package Model;
  *
  * @author ferna
  */
-public class CodiTestMOS extends Codi{
+public class CodiMOS extends Codi{
     private String codiExamen;
 
-    public CodiTestMOS(String codiExamen, String usuari, String password, String practiceTest) {
+    public CodiMOS(String codiExamen, String usuari, String password, String practiceTest) {
         super(usuari, password, practiceTest);
         this.codiExamen = codiExamen;
     }

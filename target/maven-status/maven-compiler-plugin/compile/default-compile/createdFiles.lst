@@ -1,9 +1,10 @@
-Model\LlistaCodisPreTestMOS.class
-Model\CodiTestMOS.class
+DAO\CodisDAO.class
 DAO\ConnexioBDD.class
-llegircsv\LlegirCSV.class
+Model\CodiMTA.class
+Model\LlistaCodisMTA.class
+Model\LlistaCodisMOS.class
 Model\Codi.class
-Model\CodiPreTestMOS.class
-Model\CodiPreTestMTA.class
-login\Conexion.class
+Model\CodiMOS.class
+Model\LlegirCSV.class
 DAO\LoginDAO.class
+Controlador\llegirCSVServlet.class

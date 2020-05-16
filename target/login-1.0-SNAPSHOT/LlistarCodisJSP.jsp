@@ -4,9 +4,8 @@
     Author     : Francesc
 --%>
 
-<%@page import="Model.CodiTestMOS"%>
-<%@page import="Model.CodiPreTestMTA"%>
-<%@page import="Model.CodiPreTestMOS"%>
+<%@page import="Model.CodiMTA"%>
+<%@page import="Model.CodiMOS"%>
 <%@ page import="java.util.*" %> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -21,7 +20,7 @@
     </body>
 <table width="100%" border="1" cellpadding="0" cellspacing="2" style="border-collapse:separate;border-spacing:2px;border-color:#ddd;">
 <%
-ArrayList<CodiPreTestMOS> preTestMOS =(ArrayList<CodiPreTestMOS>) request.getAttribute("PreTestMOS");
+ArrayList<CodiMTA> preTestMOS =(ArrayList<CodiMTA>) request.getAttribute("PreTestMTA");
 //ArrayList<CodiPreTestMTA> preTestMTA =(ArrayList<CodiPreTestMTA>) request.getAttribute("PreTestMTA");
 //ArrayList<CodiTestMOS> testMOS =(ArrayList<CodiTestMOS>) request.getAttribute("TestMOS");
 out.print("PreTestMOS");
@@ -39,7 +38,7 @@ for(int i=0;i< preTestMOS.size();i++) {
 }
 %>
 <div><form method="post" action="llegirCSVServlet" enctype="multipart/form-data">
-    CSV File:<input type="file" name="file" id="file">
+    CSV File:<input type="file" name="fileMOS" id="fileMOS">
     <input type="submit" value="Enviar" name="Enviar">
     </form></div>
 </table>

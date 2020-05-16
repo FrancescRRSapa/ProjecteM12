@@ -9,9 +9,9 @@ package Model;
  *
  * @author ferna
  */
-public class CodiPreTestMTA extends Codi{
+public class CodiMTA extends Codi{
 
-    public CodiPreTestMTA(String usuari, String password, String practiceTest) {
+    public CodiMTA(String usuari, String password, String practiceTest) {
         super(usuari, password, practiceTest);
     }
     

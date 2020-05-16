@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import DAO.CodisDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,13 +13,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import Model.Codi;
-import Model.LlistaCodisPreTestMOS;
-import Model.LlistaCodisPreTestMTA;
-import Model.LlistaCodisTestMOS;
+import Model.LlistaCodisMOS;
+import Model.LlistaCodisMTA;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.annotation.MultipartConfig;
@@ -71,23 +69,12 @@ public class llegirCSVServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         /*
-        try {
-            //processRequest(request, response);
-            CodisDAO.inserirCodis();
-        } catch (SQLException ex) {
-            Logger.getLogger(llegirCSVServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(llegirCSVServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        */
-        LlistaCodisPreTestMOS llistatCodisPreTestMOS = new LlistaCodisPreTestMOS();
-        //LlistaCodisTestMOS llistatCodisTestMOS = new LlistaCodisTestMOS();
-        //LlistaCodisPreTestMTA llistatCodisPreTestMTA = new LlistaCodisPreTestMTA();
-     
-        //request.setAttribute("TestMOS", llistatCodisTestMOS.llegirCodis());
-        //request.setAttribute("PreTestMOS", llistatCodisPreTestMOS.llegirCodis());
-        //request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
+        LlistaCodisMOS llistatCodisMOS = new LlistaCodisMOS();
+        LlistaCodisMTA llistatCodisPreTestMTA = new LlistaCodisMTA();
+        request.setAttribute("PreTestMOS", llistatCodisMOS.llegirCodis());
+        request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
         request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
+        */
     }
 
     /**
@@ -102,15 +89,35 @@ public class llegirCSVServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        LlistaCodisPreTestMOS llistatCodisPreTestMOS = new LlistaCodisPreTestMOS();
-        //LlistaCodisTestMOS llistatCodisTestMOS = new LlistaCodisTestMOS();
-        //LlistaCodisPreTestMTA llistatCodisPreTestMTA = new LlistaCodisPreTestMTA();
-        Part filePart = request.getPart("file");       
-        //request.setAttribute("TestMOS", llistatCodisTestMOS.llegirCodis());
-        InputStream fileContent = filePart.getInputStream();
-        request.setAttribute("PreTestMOS", llistatCodisPreTestMOS.llegirCodis(fileContent));
-        //request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
-        request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
+        Part filePartMOS = request.getPart("fileMOS");
+        Part filePartMTA = request.getPart("fileMTA");
+        //if(filePartMOS != null){
+            InputStream fileContent = filePartMOS.getInputStream();
+            try {
+                System.out.print("hola");
+                CodisDAO.inserirCodisMOS(fileContent);
+                //request.setAttribute("PreTestMOS", llistatCodisMOS.llegirCodis(fileContent));
+            } catch (SQLException ex) {
+                Logger.getLogger(llegirCSVServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(llegirCSVServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        //}
+        /*
+        if(filePartMTA != null){
+            InputStream fileContent = filePartMTA.getInputStream();
+            try {
+                CodisDAO.inserirCodisMTA(fileContent);
+                //request.setAttribute("PreTestMTA", llistatCodisMTA.llegirCodis(fileContent));
+            } catch (SQLException ex) {
+                Logger.getLogger(llegirCSVServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(llegirCSVServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        */
+        //request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
+        
     }
 
     /**
