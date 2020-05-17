@@ -13,12 +13,14 @@ import Model.CodiMOS;
 import Model.LlistaCodisMTA;
 import Model.LlistaCodisMOS;
 import java.io.InputStream;
+import java.sql.Connection;
 /**
  *
  * @author Francesc
  */
 
 public class CodisDAO {
+    /*
     public static void inserirCodisMTA(InputStream file) throws SQLException, ClassNotFoundException {
         LlistaCodisMTA llistatCodis = new LlistaCodisMTA();
         ArrayList<CodiMTA> codis = new ArrayList<>();
@@ -38,6 +40,34 @@ public class CodisDAO {
             PreparedStatement statement = ConnexioBDD.conexioBDD().prepareStatement(query);
             int files = statement.executeUpdate(query);
         }
+    }
+*/
+    public static void inserirCodisMOS(ArrayList<CodiMOS> llistaMOS)
+    {
+        
+       try
+        {
+            for(int i = 0; i < llistaMOS.size(); i++){
+                Connection con = Conexion.initializeDatabase();
+            
+            PreparedStatement st = con.prepareStatement("INSERT INTO codis_mos VALUES(?, ?, ?, ?)"); 
+            
+            st.setString(1, llistaMOS.get(i).getUsuari()); 
+            st.setString(2, llistaMOS.get(i).getPassword()); 
+            st.setString(3, llistaMOS.get(i).getPracticeTest()); 
+            st.setString(4, llistaMOS.get(i).getCodiExamen());
+
+            st.executeUpdate(); 
+            con.close();
+            st.close(); 
+            }
+        }
+        catch (ClassNotFoundException | SQLException e) 
+        { 
+            e.printStackTrace();
+            
+        }finally{
+       }
     }
 }
 
