@@ -87,6 +87,7 @@
                                                 out.write("usuario/contrasenya invàlida");
                                                 break;
                                         }
+
                                     }
                                     if(request.getParameter("cerrar")!=null){
                                         session.invalidate();
