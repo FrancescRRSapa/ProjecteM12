@@ -21,32 +21,10 @@ import java.sql.Connection;
  */
 
 public class CodisDAO {
-    /*
-    public static void inserirCodisMTA(InputStream file) throws SQLException, ClassNotFoundException {
-        LlistaCodisMTA llistatCodis = new LlistaCodisMTA();
-        ArrayList<CodiMTA> codis = new ArrayList<>();
-        codis =(ArrayList<CodiMTA>) llistatCodis.llegirCodis(file);
-        for(int i = 0; i < codis.size(); i++){
-            String query = "INSERT INTO `codis_mta`(`usuari`, `password`, `practicetest`) VALUES ('"+codis.get(i).getUsuari()+"', '"+codis.get(i).getPassword()+"', '"+codis.get(i).getPracticeTest()+"');";
-            PreparedStatement statement = ConnexioBDD.conexioBDD().prepareStatement(query);
-            int files = statement.executeUpdate(query);
-        }
-    }
-    public static void inserirCodisMOS(InputStream file) throws SQLException, ClassNotFoundException {
-        LlistaCodisMOS llistatCodis = new LlistaCodisMOS();
-        ArrayList<CodiMOS> codis = new ArrayList<>();
-        codis =(ArrayList<CodiMOS>) llistatCodis.llegirCodis(file);
-        for(int i = 0; i < codis.size(); i++){
-            String query = "INSERT INTO `codis_mos`(`usuari`, `password`, `practicetest`, `codiexamen`) VALUES ('"+codis.get(i).getUsuari()+"', '"+codis.get(i).getPassword()+"', '"+codis.get(i).getCodiExamen()+"', '"+codis.get(i).getPracticeTest()+");";
-            PreparedStatement statement = ConnexioBDD.conexioBDD().prepareStatement(query);
-            int files = statement.executeUpdate(query);
-        }
-    }
-*/
     //Per inserir codis de MOS
     public static void inserirCodisMOS(ArrayList<CodiMOS> llistaMOS){
        try{
-            for(int i = 0; i < llistaMOS.size(); i++){
+            for(int i = 1; i < llistaMOS.size(); i++){
                 Connection con = Conexion.initializeDatabase();
             
                 PreparedStatement st = con.prepareStatement("INSERT INTO codis_mos VALUES(?, ?, ?, ?)"); 
@@ -66,9 +44,9 @@ public class CodisDAO {
        }
     }
     //Per inserir codis de MTA
-    public static void inserirCodisMTA(ArrayList<CodiMOS> llistaMTA){
+    public static void inserirCodisMTA(ArrayList<CodiMTA> llistaMTA){
        try{
-            for(int i = 0; i < llistaMTA.size(); i++){
+            for(int i = 1; i < llistaMTA.size(); i++){
                 Connection con = Conexion.initializeDatabase();
             
                 PreparedStatement st = con.prepareStatement("INSERT INTO codis_mta VALUES(?, ?, ?)"); 

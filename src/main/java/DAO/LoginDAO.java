@@ -5,23 +5,28 @@
  */
 package DAO;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 /**
  *
  * @author Francesc
  */
 public class LoginDAO {
     public static String tipusUsuari (String nomUsuari, String contrassenya) throws SQLException, ClassNotFoundException {
+                Connection con = Conexion.initializeDatabase();
+                Statement stmt = con.createStatement();
 		String sql = "Select tipusUsuari from usuaris where nom='" + nomUsuari + "' AND contrassenya='" + contrassenya + "';";
                 String tipusUsuari = "";
 	   //execute sql query
-	   	ResultSet resultat = ConnexioBDD.statementBDD().executeQuery(sql);
+	   	ResultSet resultat = stmt.executeQuery(sql);
 		while(resultat.next()){
 			tipusUsuari = resultat.getString("tipusUsuari");
 		}
-                
+                resultat.close();
+                stmt.close();
+                con.close();
 		return tipusUsuari;
-
 	}
 }

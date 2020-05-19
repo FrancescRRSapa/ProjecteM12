@@ -64,7 +64,7 @@
                                         <div><%=error %><div>
                                         <%
                                     }
-                                    if(request.getParameter("cerrar")!=null){
+                                    if(request.getParameter("cerrar")!=null && (request.getParameter("cerrar").equals("true"))){
                                         session.invalidate();
                                     }
                                     %>

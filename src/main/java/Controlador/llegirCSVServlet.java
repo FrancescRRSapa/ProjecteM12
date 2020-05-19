@@ -90,6 +90,7 @@ public class llegirCSVServlet extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         LlistaCodisMOS lc = new LlistaCodisMOS();
+        LlistaCodisMTA llistatMTA = new LlistaCodisMTA();
         Part filePartMOS = request.getPart("fileMOS");
         String tipusCodi = request.getParameter("tipusCodi");
         if("MOS".equals(tipusCodi)){
@@ -97,7 +98,7 @@ public class llegirCSVServlet extends HttpServlet {
             CodisDAO.inserirCodisMOS(lc.llegirCodis(fileContent));
         }else if("MTA".equals(tipusCodi)){
             InputStream fileContent = filePartMOS.getInputStream();
-            CodisDAO.inserirCodisMTA(lc.llegirCodis(fileContent));
+            CodisDAO.inserirCodisMTA(llistatMTA.llegirCodis(fileContent));
         }
         //Part filePartMTA = request.getPart("fileMTA");
         //if(filePartMOS != null){
