@@ -20,14 +20,13 @@ public class Conexion {
     String url;
     String usuari;
     String pwd;
-    /*
+    
     public Conexion(){
         driver = "com.mysql.jdbc.Driver";
         url = "jdbc:mysql://localhost:3306/practicam12";
         usuari = "root";
         pwd = "";
     }
-*/
     
     public String loguear(String u, String c){
         Connection conn;

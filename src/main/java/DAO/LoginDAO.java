@@ -13,7 +13,6 @@ import java.sql.SQLException;
  */
 public class LoginDAO {
     public static String tipusUsuari (String nomUsuari, String contrassenya) throws SQLException, ClassNotFoundException {
-        
 		String sql = "Select tipusUsuari from usuaris where nom='" + nomUsuari + "' AND contrassenya='" + contrassenya + "';";
                 String tipusUsuari = "";
 	   //execute sql query

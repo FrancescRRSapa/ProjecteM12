@@ -5,6 +5,7 @@ Model\LlistaCodisMTA.class
 Model\LlistaCodisMOS.class
 Model\Codi.class
 Model\CodiMOS.class
+DAO\Conexion.class
 Model\LlegirCSV.class
 DAO\LoginDAO.class
 Controlador\llegirCSVServlet.class
