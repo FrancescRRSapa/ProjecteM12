@@ -72,9 +72,9 @@ public class llegirCSVServlet extends HttpServlet {
         LlistaCodisMOS llistatCodisMOS = new LlistaCodisMOS();
         LlistaCodisMTA llistatCodisPreTestMTA = new LlistaCodisMTA();
         request.setAttribute("PreTestMOS", llistatCodisMOS.llegirCodis());
-        request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());
+        request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());*/
         request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
-        */
+        
     }
 
     /**
