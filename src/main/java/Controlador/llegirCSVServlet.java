@@ -91,10 +91,18 @@ public class llegirCSVServlet extends HttpServlet {
         //processRequest(request, response);
         LlistaCodisMOS lc = new LlistaCodisMOS();
         Part filePartMOS = request.getPart("fileMOS");
-        //Part filePartMTA = request.getPart("fileMTA");
-        //if(filePartMOS != null){
+        String tipusCodi = request.getParameter("tipusCodi");
+        if(tipusCodi == "MOS"){
             InputStream fileContent = filePartMOS.getInputStream();
             CodisDAO.inserirCodisMOS(lc.llegirCodis(fileContent));
+        }else if(tipusCodi == "MTA"){
+            InputStream fileContent = filePartMOS.getInputStream();
+            CodisDAO.inserirCodisMTA(lc.llegirCodis(fileContent));
+        }
+        //Part filePartMTA = request.getPart("fileMTA");
+        //if(filePartMOS != null){
+            //InputStream fileContent = filePartMOS.getInputStream();
+            //CodisDAO.inserirCodisMOS(lc.llegirCodis(fileContent));
             //request.setAttribute("PreTestMOS", llistatCodisMOS.llegirCodis(fileContent));
         
     }

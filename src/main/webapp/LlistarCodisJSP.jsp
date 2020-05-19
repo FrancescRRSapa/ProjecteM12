@@ -25,7 +25,7 @@ ArrayList<CodiMTA> preTestMOS =(ArrayList<CodiMTA>) request.getAttribute("PreTes
 //ArrayList<CodiTestMOS> testMOS =(ArrayList<CodiTestMOS>) request.getAttribute("TestMOS");
 out.print("PreTestMOS");
 if(preTestMOS != null){
-for(int i=0;i< preTestMOS.size();i++) {
+    for(int i=0;i< preTestMOS.size();i++) {
 %>
 	<tr>
         <td>HOLA</td>
@@ -34,11 +34,18 @@ for(int i=0;i< preTestMOS.size();i++) {
 	<td><%out.print((String) preTestMOS.get(i).getPracticeTest());%></td>
 	</tr>
 <%
-}
+    }
 }
 %>
 <div><form method="post" action="llegirCSVServlet" enctype="multipart/form-data">
     CSV File:<input type="file" name="fileMOS" id="fileMOS">
+    <br>
+    <label for="tipusCodi">Tipus de codis a inserir:</label>
+    <select name="tipusCodi">
+        <option name="MOS" value="MOS">Codis MOS</option>
+        <option name="MTA" value="MTA">Codis MTA</option>
+    </select>
+    
     <input type="submit" value="Enviar" name="Enviar">
     </form></div>
 </table>
