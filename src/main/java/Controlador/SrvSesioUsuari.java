@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import DAO.CodisDAO;
+import DAO.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,22 +13,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Model.LlistaCodisMOS;
-import Model.LlistaCodisMTA;
-import java.io.InputStream;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.http.Part;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Francesc
+ * @author ferna
  */
-@WebServlet(name = "llegirCSVServlet", urlPatterns = {"/llegirCSVServlet"})
-@MultipartConfig
-public class llegirCSVServlet extends HttpServlet {
+@WebServlet(name = "SrvSesioUsuari", urlPatterns = {"/SrvSesioUsuari"})
+public class SrvSesioUsuari extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -47,10 +39,10 @@ public class llegirCSVServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet llegirCSVServlet</title>");            
+            out.println("<title>Servlet SrvSesioUsuari</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet llegirCSVServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SrvSesioUsuari at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -68,13 +60,7 @@ public class llegirCSVServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        LlistaCodisMOS llistatCodisMOS = new LlistaCodisMOS();
-        LlistaCodisMTA llistatCodisPreTestMTA = new LlistaCodisMTA();
-        request.setAttribute("PreTestMOS", llistatCodisMOS.llegirCodis());
-        request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());*/
-        request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
-        
+        processRequest(request, response);
     }
 
     /**
@@ -89,22 +75,39 @@ public class llegirCSVServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        LlistaCodisMOS lc = new LlistaCodisMOS();
-        Part filePartMOS = request.getPart("fileMOS");
-        String tipusCodi = request.getParameter("tipusCodi");
-        if("MOS".equals(tipusCodi)){
-            InputStream fileContent = filePartMOS.getInputStream();
-            CodisDAO.inserirCodisMOS(lc.llegirCodis(fileContent));
-        }else if("MTA".equals(tipusCodi)){
-            InputStream fileContent = filePartMOS.getInputStream();
-            CodisDAO.inserirCodisMTA(lc.llegirCodis(fileContent));
-        }
-        //Part filePartMTA = request.getPart("fileMTA");
-        //if(filePartMOS != null){
-            //InputStream fileContent = filePartMOS.getInputStream();
-            //CodisDAO.inserirCodisMOS(lc.llegirCodis(fileContent));
-            //request.setAttribute("PreTestMOS", llistatCodisMOS.llegirCodis(fileContent));
-        
+        Conexion c = new Conexion();
+            if(request.getParameter("btnLogin")!= null){
+                String nombre = request.getParameter("username");
+                String contrasenya = request.getParameter("pass");
+                HttpSession sesion = request.getSession();
+                switch(c.loguear(nombre, contrasenya)){
+                    case "administrador":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "administrador");
+                        response.sendRedirect("indexAdmin.jsp");
+                        break;
+                    case "professor":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "professor");
+                        response.sendRedirect("indexUser.jsp");
+                        break;
+                    case "alumne":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "alumne");
+                        response.sendRedirect("indexUser.jsp");
+                        break;
+                    case "extern":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "extern");
+                        response.sendRedirect("indexUser.jsp");
+                        break;
+                    default:
+                        request.setAttribute("error", "usuari/contrasenya invàlida");
+                        request.getRequestDispatcher("index.jsp").forward(request, response);
+                        break;
+                }
+
+            }
     }
 
     /**

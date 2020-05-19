@@ -34,7 +34,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-50 p-b-90">
-                            <form class="login100-form validate-form flex-sb flex-w" action="index.jsp" method="POST">
+                            <form class="login100-form validate-form flex-sb flex-w" action="SrvSesioUsuari" method="POST">
 					<span class="login100-form-title p-b-51">
 						Login
 					</span>
@@ -57,37 +57,12 @@
 
 				</form>
                                 <%
-                                    Conexion c = new Conexion();
-                                    if(request.getParameter("btnLogin")!= null){
-                                        String nombre = request.getParameter("username");
-                                        String contrasenya = request.getParameter("pass");
-                                        HttpSession sesion = request.getSession();
-                                        switch(c.loguear(nombre, contrasenya)){
-                                            case "administrador":
-                                                sesion.setAttribute("user", nombre);
-                                                sesion.setAttribute("tipusUsuari", "administrador");
-                                                response.sendRedirect("indexAdmin.jsp");
-                                                break;
-                                            case "professor":
-                                                sesion.setAttribute("user", nombre);
-                                                sesion.setAttribute("tipusUsuari", "professor");
-                                                response.sendRedirect("indexUser.jsp");
-                                                break;
-                                            case "alumne":
-                                                sesion.setAttribute("user", nombre);
-                                                sesion.setAttribute("tipusUsuari", "alumne");
-                                                response.sendRedirect("indexUser.jsp");
-                                                break;
-                                            case "extern":
-                                                sesion.setAttribute("user", nombre);
-                                                sesion.setAttribute("tipusUsuari", "extern");
-                                                response.sendRedirect("indexUser.jsp");
-                                                break;
-                                            default:
-                                                out.write("usuario/contrasenya invàlida");
-                                                break;
-                                        }
-
+                                    String error = (String)request.getAttribute("error");
+                                    if(request.getAttribute("error")!= null){
+                                        //out.print(error);
+                                        %>
+                                        <div><%=error %><div>
+                                        <%
                                     }
                                     if(request.getParameter("cerrar")!=null){
                                         session.invalidate();
