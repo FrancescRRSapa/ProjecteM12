@@ -23,7 +23,7 @@
                     Institut Sa Palomera
                 </div>
                 <nav>
-                    <a href="codisAdmin.html">Admin. codis</a>
+                    <a href="codisAdmin.jsp">Admin. codis</a>
                     <a href="#">Certificacions MOS</a>    
                     <a href="#">Certificacions MTA</a>                                    
                     <a href="#">Reserves</a>

@@ -1,12 +1,11 @@
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\DAO\Conexion.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\DAO\ConnexioBDD.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\DAO\CodisDAO.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Model\Codi.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Model\CodiMOS.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Model\CodiMTA.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Model\LlistaCodisMOS.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Model\LlistaCodisMTA.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Controlador\llegirCSVServlet.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Controlador\SrvSesioUsuari.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\Model\LlegirCSV.java
-C:\Users\ferna\Documents\ProjecteM12\ProjecteM12\src\main\java\DAO\LoginDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Model\LlistaCodisMOS.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Model\Codi.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Model\LlistaCodisMTA.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\DAO\LoginDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Controlador\SrvSesioUsuari.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\DAO\CodisDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\DAO\Conexio.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Controlador\SrvLlegirCSV.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Model\LlegirCSV.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Model\CodiMOS.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projecte\ProjecteM12\src\main\java\Model\CodiMTA.java
