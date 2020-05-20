@@ -21,8 +21,8 @@ public class Conexio {
     String usuari;
     String pwd;
     
-    public String loguear(String u, String c){
-        Connection conn;
+    public String loguear(String u, String c) throws SQLException, ClassNotFoundException{
+        Connection conn = Conexio.initializeDatabase();
         PreparedStatement pst;
         ResultSet rs;
         String tipusUsuari= "0";

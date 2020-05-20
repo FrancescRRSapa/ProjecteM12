@@ -8,6 +8,9 @@ package Controlador;
 import DAO.Conexio;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -80,6 +83,7 @@ public class SrvSesioUsuari extends HttpServlet {
                 String nombre = request.getParameter("username");
                 String contrasenya = request.getParameter("pass");
                 HttpSession sesion = request.getSession();
+            try {
                 switch(c.loguear(nombre, contrasenya)){
                     case "administrador":
                         sesion.setAttribute("user", nombre);
@@ -106,6 +110,11 @@ public class SrvSesioUsuari extends HttpServlet {
                         request.getRequestDispatcher("index.jsp").forward(request, response);
                         break;
                 }
+            } catch (SQLException ex) {
+                Logger.getLogger(SrvSesioUsuari.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(SrvSesioUsuari.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             }
     }
