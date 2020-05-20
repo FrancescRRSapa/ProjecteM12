@@ -28,7 +28,7 @@ import javax.servlet.http.Part;
  */
 @WebServlet(name = "llegirCSVServlet", urlPatterns = {"/llegirCSVServlet"})
 @MultipartConfig
-public class llegirCSVServlet extends HttpServlet {
+public class SrvLlegirCSV extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

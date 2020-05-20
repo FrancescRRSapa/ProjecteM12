@@ -15,15 +15,24 @@ import java.util.ArrayList;
 public class LlistaCodisMOS {
     ArrayList<CodiMOS> llistaMOS = new ArrayList<CodiMOS>();
     
-    public ArrayList<CodiMOS> llegirCodis(InputStream file){
-        ArrayList<String[]> llistaCodis = (ArrayList<String[]>) LlegirCSV.llegirDades(file);
-            for(int i = 0; i < llistaCodis.size(); i++) {
-                CodiMOS codi1 = new CodiMOS(llistaCodis.get(i)[3], llistaCodis.get(i)[0],llistaCodis.get(i)[1], llistaCodis.get(i)[2]);
+    public LlistaCodisMOS llegirCodis(InputStream file){
+        LlistaCodisMOS llistatMOS = new LlistaCodisMOS();
+        ArrayList<String[]> dades = (ArrayList<String[]>) LlegirCSV.llegirDades(file);
+            for(int i = 0; i < dades.size(); i++) {
+                CodiMOS codi1 = new CodiMOS(dades.get(i)[3], dades.get(i)[0],dades.get(i)[1], dades.get(i)[2]);
                 llistaMOS.add(codi1);
             }
-            return llistaMOS;
+            return llistatMOS;
     }
-    public void afegirCodi(CodiMOS codi){
+    public void add(CodiMOS codi){
         llistaMOS.add(codi);
+    }
+    
+    public int size(){
+        return llistaMOS.size();
+    }
+    
+    public CodiMOS get(int i){
+        return llistaMOS.get(i);
     }
 }

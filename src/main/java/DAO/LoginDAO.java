@@ -15,7 +15,7 @@ import java.sql.Statement;
  */
 public class LoginDAO {
     public static String tipusUsuari (String nomUsuari, String contrassenya) throws SQLException, ClassNotFoundException {
-                Connection con = Conexion.initializeDatabase();
+                Connection con = Conexio.initializeDatabase();
                 Statement stmt = con.createStatement();
 		String sql = "Select tipusUsuari from usuaris where nom='" + nomUsuari + "' AND contrassenya='" + contrassenya + "';";
                 String tipusUsuari = "";

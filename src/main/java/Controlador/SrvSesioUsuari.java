@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import DAO.Conexion;
+import DAO.Conexio;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -75,7 +75,7 @@ public class SrvSesioUsuari extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        Conexion c = new Conexion();
+        Conexio c = new Conexio();
             if(request.getParameter("btnLogin")!= null){
                 String nombre = request.getParameter("username");
                 String contrasenya = request.getParameter("pass");

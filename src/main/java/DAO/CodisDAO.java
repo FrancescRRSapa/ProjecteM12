@@ -5,14 +5,12 @@
  */
 package DAO;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import Model.CodiMTA;
 import Model.CodiMOS;
-import Model.LlistaCodisMTA;
 import Model.LlistaCodisMOS;
-import java.io.InputStream;
+import Model.LlistaCodisMTA;
 import java.sql.Connection;
 /**
  *
@@ -22,10 +20,10 @@ import java.sql.Connection;
 
 public class CodisDAO {
     //Per inserir codis de MOS
-    public static void inserirCodisMOS(ArrayList<CodiMOS> llistaMOS){
+    public static void inserirCodisMOS(LlistaCodisMOS llistaMOS){
        try{
             for(int i = 1; i < llistaMOS.size(); i++){
-                Connection con = Conexion.initializeDatabase();
+                Connection con = Conexio.initializeDatabase();
             
                 PreparedStatement st = con.prepareStatement("INSERT INTO codis_mos VALUES(?, ?, ?, ?)"); 
 
@@ -44,10 +42,10 @@ public class CodisDAO {
        }
     }
     //Per inserir codis de MTA
-    public static void inserirCodisMTA(ArrayList<CodiMTA> llistaMTA){
+    public static void inserirCodisMTA(LlistaCodisMTA llistaMTA){
        try{
             for(int i = 1; i < llistaMTA.size(); i++){
-                Connection con = Conexion.initializeDatabase();
+                Connection con = Conexio.initializeDatabase();
             
                 PreparedStatement st = con.prepareStatement("INSERT INTO codis_mta VALUES(?, ?, ?)"); 
 
