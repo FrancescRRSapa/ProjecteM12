@@ -45,4 +45,8 @@ public class Codi {
     public void setPracticeTest(String practiceTest) {
         this.practiceTest = practiceTest;
     }
+
+    public String getCodiExamen() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

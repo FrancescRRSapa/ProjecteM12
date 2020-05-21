@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author ferna
  */
 public class LlistaCodisMOS {
+    /*
     ArrayList<CodiMOS> llistaMOS = new ArrayList<CodiMOS>();
     
     public LlistaCodisMOS llegirCodis(InputStream file){
@@ -35,4 +36,5 @@ public class LlistaCodisMOS {
     public CodiMOS get(int i){
         return llistaMOS.get(i);
     }
+*/
 }
