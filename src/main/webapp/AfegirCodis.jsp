@@ -13,9 +13,39 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Afegir Codis</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/script.js"></script>
     </head>
     <body>
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <!-- <img src="logoSapa.png" id="sapa"> -->
+                    Afegir codis
+                </div>
+                <nav>
+                    <a href="indexAdmin.jsp">Principal</a>
+        <%
+            HttpSession sesion = request.getSession();
+            String usuario;
+            String tipusUsuari;
+            
+            if(sesion.getAttribute("user")!= null && sesion.getAttribute("tipusUsuari")!= null){
+                usuario = sesion.getAttribute("user").toString();
+                tipusUsuari = sesion.getAttribute("tipusUsuari").toString();
+                out.print("<a href='index.jsp?cerrar=true'><h5>Tancar sessió de " + usuario +"</h5></a> ");
+                if(tipusUsuari != "administrador"){
+                    response.sendRedirect("index.jsp?cerrar=true");
+                }
+            }else{
+                out.print("<script>location.replace('index.jsp');</script>");
+                }
+            %>
+                </nav>
+            </div> 
+        </header>
         <div>
             <h1>Afegir nous codis a la base de dades</h1>
             <a href="indexAdmin.jsp">Index</a>
