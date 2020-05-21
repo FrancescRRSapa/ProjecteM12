@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import Model.CodiMTA;
 import Model.CodiMOS;
+import Model.LlistaCodis;
 import Model.LlistaCodisMOS;
 import Model.LlistaCodisMTA;
 import java.sql.Connection;
@@ -20,7 +21,7 @@ import java.sql.Connection;
 
 public class CodisDAO {
     //Per inserir codis de MOS
-    public static void inserirCodisMOS(LlistaCodisMOS llistaMOS){
+    public static void inserirCodisMOS(LlistaCodis llistaMOS){
        try{
             for(int i = 1; i < llistaMOS.size(); i++){
                 Connection con = Conexio.initializeDatabase();
@@ -42,7 +43,7 @@ public class CodisDAO {
        }
     }
     //Per inserir codis de MTA
-    public static void inserirCodisMTA(LlistaCodisMTA llistaMTA){
+    public static void inserirCodisMTA(LlistaCodis llistaMTA){
        try{
             for(int i = 1; i < llistaMTA.size(); i++){
                 Connection con = Conexio.initializeDatabase();

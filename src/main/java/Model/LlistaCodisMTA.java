@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @author ferna
  */
 public class LlistaCodisMTA {
+    /*
     ArrayList<CodiMTA> llistaMTA = new ArrayList<CodiMTA>();
     
     public LlistaCodisMTA llegirCodis(InputStream file){
@@ -35,4 +36,5 @@ public class LlistaCodisMTA {
     public CodiMTA get(int i){
         return llistaMTA.get(i);
     }
+*/
 }
