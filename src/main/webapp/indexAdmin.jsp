@@ -28,7 +28,7 @@
                     <a href="#">Certificacions MTA</a>                                    
                     <a href="#">Reserves</a>
                     <a href="#">Pagament</a>
-                    <a href="#">Configuracio</a>
+                    <a href="configuracio.jsp">Configuracio</a>
         <%
             HttpSession sesion = request.getSession();
             String usuario;
