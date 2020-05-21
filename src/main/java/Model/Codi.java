@@ -13,6 +13,7 @@ public class Codi {
     private String usuari;
     private String password;
     private String practiceTest;
+    private String codiExamen;
 
     //Constructor
     public Codi(String usuari, String password, String practiceTest) {
@@ -44,5 +45,9 @@ public class Codi {
 
     public void setPracticeTest(String practiceTest) {
         this.practiceTest = practiceTest;
+    }
+
+    public String getCodiExamen() {
+        return codiExamen;
     }
 }
