@@ -6,6 +6,7 @@
 package Controlador;
 
 import DAO.CodisDAO;
+import Model.LlistaCodis;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -68,12 +69,7 @@ public class SrvLlegirCSV extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
-        LlistaCodisMOS llistatCodisMOS = new LlistaCodisMOS();
-        LlistaCodisMTA llistatCodisPreTestMTA = new LlistaCodisMTA();
-        request.setAttribute("PreTestMOS", llistatCodisMOS.llegirCodis());
-        request.setAttribute("PreTestMTA", llistatCodisPreTestMTA.llegirCodis());*/
-        request.getRequestDispatcher("LlistarCodisJSP.jsp").forward(request, response);
+        
         
     }
 
@@ -89,8 +85,9 @@ public class SrvLlegirCSV extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        LlistaCodisMOS lc = new LlistaCodisMOS();
-        LlistaCodisMTA llistatMTA = new LlistaCodisMTA();
+        //LlistaCodisMOS lc = new LlistaCodisMOS();
+        //LlistaCodisMTA llistatMTA = new LlistaCodisMTA();
+        LlistaCodis lc = new LlistaCodis();
         Part filePartMOS = request.getPart("fileMOS");
         String tipusCodi = request.getParameter("tipusCodi");
         if("MOS".equals(tipusCodi)){
@@ -98,7 +95,7 @@ public class SrvLlegirCSV extends HttpServlet {
             CodisDAO.inserirCodisMOS(lc.llegirCodis(fileContent));
         }else if("MTA".equals(tipusCodi)){
             InputStream fileContent = filePartMOS.getInputStream();
-            CodisDAO.inserirCodisMTA(llistatMTA.llegirCodis(fileContent));
+            CodisDAO.inserirCodisMTA(lc.llegirCodis(fileContent));
         }
         //Part filePartMTA = request.getPart("fileMTA");
         //if(filePartMOS != null){

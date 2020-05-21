@@ -1,5 +1,6 @@
 DAO\CodisDAO.class
 DAO\Conexio.class
+Model\LlistaCodis.class
 Model\CodiMTA.class
 Model\LlistaCodisMTA.class
 Model\LlistaCodisMOS.class
