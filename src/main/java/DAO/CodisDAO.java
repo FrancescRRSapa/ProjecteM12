@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import Model.CodiMTA;
 import Model.CodiMOS;
 import Model.LlistaCodis;
-import Model.LlistaCodisMOS;
-import Model.LlistaCodisMTA;
 import java.sql.Connection;
 /**
  *

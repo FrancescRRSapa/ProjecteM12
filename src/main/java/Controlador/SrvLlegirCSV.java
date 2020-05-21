@@ -14,12 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Model.LlistaCodisMOS;
-import Model.LlistaCodisMTA;
 import java.io.InputStream;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
 
@@ -27,7 +22,7 @@ import javax.servlet.http.Part;
  *
  * @author Francesc
  */
-@WebServlet(name = "llegirCSVServlet", urlPatterns = {"/llegirCSVServlet"})
+@WebServlet(name = "SrvLlegirCSV", urlPatterns = {"/SrvLlegirCSV"})
 @MultipartConfig
 public class SrvLlegirCSV extends HttpServlet {
 
