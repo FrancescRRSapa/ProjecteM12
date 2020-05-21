@@ -49,7 +49,7 @@
         <div>
             <h1>Afegir nous codis a la base de dades</h1>
             <a href="indexAdmin.jsp">Index</a>
-            <form method="post" action="llegirCSVServlet" enctype="multipart/form-data">
+            <form method="post" action="SrvLlegirCSV" enctype="multipart/form-data">
             CSV File:<input type="file" name="fileMOS" id="fileMOS">
             <br>
             <label for="tipusCodi">Tipus de codis a inserir:</label>
