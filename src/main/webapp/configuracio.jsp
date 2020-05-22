@@ -23,8 +23,8 @@
                 </div>
                 <nav>
                     <a href="indexAdmin.jsp">Principal</a>
-                    <a href="configMail.jsp">Config. Mail</a>
-                    <a href="configDates.jsp">Config. Dates</a>
+                    <!-- <a href="configMail.jsp">Config. Mail</a>
+                    <a href="configDates.jsp">Config. Dates</a> -->
         <%
             HttpSession sesion = request.getSession();
             String usuario;
@@ -44,5 +44,51 @@
                 </nav>
             </div> 
         </header>
+        <h1>Benvingut/da a la configuració</h1>
+        <details>
+            <summary>Configuració de correu</summary>
+            <fieldset id="configMail">
+                <form id="formulari" action="SrvMail" method="POST">
+                    <label for="correu">Modifica el correu:</label>
+                    <br>
+                    <textarea rows="4" cols="50" name="correu" form="formulari"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </fieldset>
+        </details>
+        
+        <br>
+        <!-- L'única cosa que em preocupa és que no poguem realitzaar les crides o rebre les dates correctament -->
+        <details>
+            <summary>Configuració de dates</summary>
+            <fieldset id="configDates">
+                <form id="formulari" action="SrvEsborrarCodis" method="POST">
+                    <label for="dates">Escull una data</label>
+                     <select name="data" id="data">
+                       <%
+                           char prova[] = {'a','b','c','d','e'};
+                           for(int i = 0; i < prova.length; i++){
+                               out.print("<option value='prova'"+ prova[i] +">"+ prova[i] +"</option>");
+                           }
+                       %>
+                     </select>
+                     <br><br>
+                     <input type="submit" value="Submit">
+                </form>
+            </fieldset>
+        </details>
+        <details>
+            <summary>Configuració de dates</summary>
+            <fieldset id="configDates">
+                <form id="formulari" action="SrvCertificacions" method="POST">
+                  <label for="correu">Afegir una nova certificació:</label>
+                    <br>
+                    <input type='text' name="certificacio" id='certificacio' placeholder="Nova Certificació"></input>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </fieldset>
+        </details>
     </body>
 </html>
