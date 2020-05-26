@@ -21,7 +21,7 @@
             <div class="wrapper">
                 <div class="logo">
                     <!-- <img src="logoSapa.png" id="sapa"> -->
-                    Index Administradores
+                    Administració de codis
                 </div>
                 <nav>
                     <a href="indexAdmin.jsp">Principal</a>
@@ -44,7 +44,19 @@
                 </nav>
             </div> 
         </header>
-        <a href="AfegirCodis.jsp">Afegir nous codis</a>
+        <h1>Afegir nous codis a la base de dades</h1>
+        <form method="post" action="SrvLlegirCSV" enctype="multipart/form-data">
+            CSV File:<input type="file" name="fileMOS" id="fileMOS">
+            <br>
+            <label for="tipusCodi">Tipus de codis a inserir:</label>
+            <br>
+            <select name="tipusCodi">
+                <option name="MOS" value="MOS">Codis MOS</option>
+                <option name="MTA" value="MTA">Codis MTA</option>
+            </select>
+            <br>
+            <input type="submit" value="Enviar" name="Enviar">
+            </form>
     </body>
 </html>
 
