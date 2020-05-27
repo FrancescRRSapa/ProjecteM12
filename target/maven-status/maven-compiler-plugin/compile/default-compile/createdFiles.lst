@@ -1,10 +1,10 @@
-DAO\CodisDAO.class
+Model\CodiMTA.class
 DAO\Conexio.class
 Model\LlistaCodis.class
-Model\CodiMTA.class
-Controlador\SrvLlegirCSV.class
-Model\Codi.class
-Model\CodiMOS.class
 Controlador\SrvSesioUsuari.class
+Model\Codi.class
+DAO\CodisDAO.class
+Controlador\SrvLlegirCSV.class
+Model\CodiMOS.class
 Model\LlegirCSV.class
 DAO\LoginDAO.class
