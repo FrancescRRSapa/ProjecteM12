@@ -5,29 +5,40 @@
  */
 package Model;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 /**
  *
  * @author ferna
  */
-public class FormaPagament {
-    private String formaPagament;
+public class GrupPartit {
+    private int idGrupPartit;
+    private String nom;
     private Date dataAlta;
     private Date dataBaixa;
 
-    public FormaPagament(String formaPagament, Date dataAlta, Date dataBaixa) {
-        this.formaPagament = formaPagament;
-        this.dataAlta = dataAlta;
-        this.dataBaixa = dataBaixa;
+    public GrupPartit(int idGrupPartit, String nom, Date data_alta, Date data_baixa) {
+        this.idGrupPartit = idGrupPartit;
+        this.nom = nom;
+        this.dataAlta = data_alta;
+        this.dataBaixa = data_baixa;
     }
 
-    public String getFormaPagament() {
-        return formaPagament;
+    public int getIdGrupPartit() {
+        return idGrupPartit;
     }
 
-    public void setFormaPagament(String formaPagament) {
-        this.formaPagament = formaPagament;
+    public void setIdGrupPartit(int idGrupPartit) {
+        this.idGrupPartit = idGrupPartit;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public Date getDataAlta() {
@@ -46,5 +57,5 @@ public class FormaPagament {
         this.dataBaixa = dataBaixa;
     }
     
-    
 }
+

@@ -13,7 +13,6 @@ public class Codi {
     private String usuari;
     private String password;
     private String practiceTest;
-    private String codiExamen;
 
     //Constructor
     public Codi(String usuari, String password, String practiceTest) {
@@ -48,6 +47,6 @@ public class Codi {
     }
 
     public String getCodiExamen() {
-        return codiExamen;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
