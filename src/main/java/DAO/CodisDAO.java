@@ -11,6 +11,8 @@ import Model.CodiMTA;
 import Model.CodiMOS;
 import Model.LlistaCodis;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 /**
  *
  * @author Francesc
@@ -60,5 +62,16 @@ public class CodisDAO {
             e.printStackTrace();
         }finally{
        }
+    }
+    
+    public static LlistaCodis llistarCodiMTA() throws SQLException, ClassNotFoundException{
+        LlistaCodis llistatCodis = new LlistaCodis();
+        Connection con = Conexio.initializeDatabase();
+        Statement stmt = con.createStatement();
+        String sql = "SELECT ^ from codi_mta";
+        ResultSet rs = stmt.executeQuery(sql);
+        while(rs.next()){
+            String usuari = rs.getString("");
+        }
     }
 }

@@ -23,7 +23,7 @@ public class LlistaCodis {
                     CodiMOS codi = new CodiMOS(dades.get(i)[3], dades.get(i)[0],dades.get(i)[1], dades.get(i)[2]);
                     llistatCodis.add(codi);
                 }else{
-                    Codi codi = new Codi(dades.get(i)[0],dades.get(i)[1], dades.get(i)[2]);
+                    CodiMTA codi = new CodiMTA(dades.get(i)[0],dades.get(i)[1], dades.get(i)[2]);
                     llistatCodis.add(codi);
                 }
             }
