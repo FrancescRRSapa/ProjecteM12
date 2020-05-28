@@ -45,7 +45,7 @@ public class ConfiguracioDAO {
     public static void modificar(Configuracio c) throws SQLException, ClassNotFoundException{
             Connection con = Conexio.initializeDatabase(); 
 
-            PreparedStatement pt = con.prepareStatement("UPDATE concepte SET codis_min = '" + c.getCodisMin()
+            PreparedStatement pt = con.prepareStatement("UPDATE configuracio SET codis_min = '" + c.getCodisMin()
                                                             + "', alumnes_aula= '" + c.getAlumnesAula()
                                                             + "', direccio_correu= '" + c.getDireccioCorreu()
                                                             + "', contrasenya_correu= '" + Utilitats.Encriptar(c.getContrasenyaCorreu())
