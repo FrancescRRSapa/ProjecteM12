@@ -1,24 +1,25 @@
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\ConfiguracioDAO.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\ConcepteDAO.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\GrupPartitDAO.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\CodiMTA.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\LlistaConceptes.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\Utilitats.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\CodisDAO.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\ConnexioBDD.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\LlistaCodis.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\LlistaGrupsPartits.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\Conexio.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\Codi.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Controlador\SrvLlegirCSV.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\LoginDAO.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\GrupPartit.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\CodiMOS.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\Tarifa.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Controlador\SrvSesioUsuari.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\TarifaDAO.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\Configuracio.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\LlegirCSV.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\DAO\Conexion.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\LlistaTarifes.java
-C:\Users\ferna\OneDrive\Documentos\M12\ProjecteM12\src\main\java\Model\Concepte.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Controlador\SrvLlistarConfiguracio.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\Conexion.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaTarifes.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\TarifaDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Codi.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\CodisDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaConceptes.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\GrupPartitDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Configuracio.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\Conexio.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaCodis.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Controlador\SrvLlegirCSV.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\ConnexioBDD.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\LoginDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Concepte.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\CodiMTA.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Tarifa.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlegirCSV.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\ConcepteDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Controlador\SrvSesioUsuari.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\ConfiguracioDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Utilitats.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\CodiMOS.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\GrupPartit.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaGrupsPartits.java

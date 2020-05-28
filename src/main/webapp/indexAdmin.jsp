@@ -27,7 +27,7 @@
                     <a href="certificacions.jsp">Certificacions</a>                                 
                     <a href="reserves.jsp">Reserves</a>
                     <a href="pagament.jsp">Pagament</a>
-                    <a href="configuracio.jsp">Configuracio</a>
+                    <a href="SrvConfiguracio">Configuracio</a>
         <%
             HttpSession sesion = request.getSession();
             String usuario;
