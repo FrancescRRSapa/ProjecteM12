@@ -62,7 +62,7 @@
         <!-- L'única cosa que em preocupa és que no poguem realitzaar les crides o rebre les dates correctament -->
         <details>
             <summary>Configuració de dates</summary>
-            <fieldset id="configDates">
+            <fieldset id="esborrarCodi">
                 <form id="formulari" action="SrvEsborrarCodis" method="POST">
                     <label for="dates">Escull una data</label>
                      <select name="data" id="data">
@@ -80,7 +80,7 @@
         </details>
         <details>
             <summary>Configuració de dates</summary>
-            <fieldset id="configDates">
+            <fieldset id="novaCertificacio">
                 <form id="formulari" action="SrvCertificacions" method="POST">
                   <label for="correu">Afegir una nova certificació:</label>
                     <br>
