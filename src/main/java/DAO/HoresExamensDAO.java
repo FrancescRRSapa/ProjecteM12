@@ -6,22 +6,26 @@
 package DAO;
 
 import Model.HoraExamen;
+import Model.LlistaHoresExamens;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
  * @author ferna
  */
 public class HoresExamensDAO {
-    /*
+    
     public static void inserir(HoraExamen h) throws SQLException, ClassNotFoundException{
         try (Connection con = Conexio.initializeDatabase()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO hora_examen VALUES(?,?,?)");
             ps.setDate(1, h.getDiaSetmana());
-            ps.setDate(2, g.getDataAlta());
-            ps.setDate(3, g.getDataBaixa());
+            ps.setString(2, h.getHora());
+            ps.setString(3, h.getTipus());
             
             ps.executeUpdate();
             
@@ -29,35 +33,35 @@ public class HoresExamensDAO {
         }
     }
     
-    public static LlistaGrupsPartits llistar() throws SQLException, ClassNotFoundException
+    public static LlistaHoresExamens llistar() throws SQLException, ClassNotFoundException
     {
-        LlistaGrupsPartits llistatGrupsPartits = new LlistaGrupsPartits();
+        LlistaHoresExamens llistatHoresExamens = new LlistaHoresExamens();
             
             Connection con = Conexio.initializeDatabase(); 
             Statement stmt = con.createStatement();
             
-            String sql = "SELECT * FROM grup_partit";
+            String sql = "SELECT * FROM hora_examen";
             ResultSet rs = stmt.executeQuery(sql);
             
             while(rs.next())
             {
-                int idGrupPartit = rs.getInt("id_grup_partit");
-                String nom = rs.getString("nom");
-                Date dataAlta = rs.getDate("data_alta");
-                Date dataBaixa = rs.getDate("data_baixa");
-                GrupPartit g = new GrupPartit(idGrupPartit, nom, dataAlta, dataBaixa);
-                llistatGrupsPartits.add(g);
+                int idHoraExamen = rs.getInt("id_hora_examen");
+                Date diaSetmana = rs.getDate("dia_setmana");
+                String hora = rs.getString("hora");
+                String tipus = rs.getString("tipus");
+                HoraExamen h = new HoraExamen(idHoraExamen, diaSetmana, hora, tipus);
+                llistatHoresExamens.add(h);
             }
             rs.close();
-            con.close(); 
+            con.close();
             
-            return llistatGrupsPartits;
+            return llistatHoresExamens;
     }
     
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
             Connection con = Conexio.initializeDatabase(); 
-            PreparedStatement st = con.prepareStatement("DELETE FROM grup_partit WHERE id_tarifa = '" + id + "'"); 
+            PreparedStatement st = con.prepareStatement("DELETE FROM hora_examen WHERE id_hora_examen = '" + id + "'"); 
 
             st.executeUpdate(); 
 
@@ -65,18 +69,17 @@ public class HoresExamensDAO {
             con.close(); 
     }
     
-    public static void modificar(GrupPartit g) throws SQLException, ClassNotFoundException{
+    public static void modificar(HoraExamen h) throws SQLException, ClassNotFoundException{
             Connection con = Conexio.initializeDatabase(); 
 
-            PreparedStatement pt = con.prepareStatement("UPDATE grup_partit SET nom = '" + g.getNom()
-                                                            + "', data_alta= '" + g.getDataAlta()
-                                                            + "', data_baixa= '" + g.getDataBaixa()
-                                                            + "' WHERE id_grup_partit = '" + g.getIdGrupPartit() + "'"); 
+            PreparedStatement pt = con.prepareStatement("UPDATE hora_examen SET dia_setmana = '" + h.getDiaSetmana()
+                                                            + "', hora= '" + h.getHora()
+                                                            + "', tipus= '" + h.getTipus()
+                                                            + "' WHERE id_hora_examen = '" + h.getIdHoraExamen() + "'"); 
 
             pt.executeUpdate(); 
 
             pt.close(); 
             con.close();
     }
-*/
 }
