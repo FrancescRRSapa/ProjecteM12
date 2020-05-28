@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import Model.LlistaCodis;
 import java.sql.Connection;
+import java.sql.Date;
 /**
  *
  * @author Francesc
@@ -22,13 +23,15 @@ public class CodisDAO {
             for(int i = 1; i < llistaMOS.size(); i++){
                 Connection con = Conexio.initializeDatabase();
             
-                PreparedStatement st = con.prepareStatement("INSERT INTO codis_mos VALUES(?, ?, ?, ?)"); 
+                PreparedStatement st = con.prepareStatement("INSERT INTO codis_mos VALUES(?, ?, ?, ?, ?, ?)"); 
 
                 st.setString(1, llistaMOS.get(i).getUsuari()); 
                 st.setString(2, llistaMOS.get(i).getPassword()); 
                 st.setString(3, llistaMOS.get(i).getPracticeTest()); 
                 st.setString(4, llistaMOS.get(i).getCodiExamen());
-
+                st.setDate(5, new Date(System.currentTimeMillis()));
+                st.setInt(6, 0);
+                
                 st.executeUpdate(); 
                 con.close();
                 st.close(); 
@@ -38,18 +41,20 @@ public class CodisDAO {
         }finally{
        }
     }
+    
     //Per inserir codis de MTA
     public static void inserirCodisMTA(LlistaCodis llistaMTA){
        try{
             for(int i = 1; i < llistaMTA.size(); i++){
                 Connection con = Conexio.initializeDatabase();
             
-                PreparedStatement st = con.prepareStatement("INSERT INTO codis_mta VALUES(?, ?, ?)"); 
+                PreparedStatement st = con.prepareStatement("INSERT INTO codis_mta VALUES(?, ?, ?, ?, ?)"); 
 
                 st.setString(1, llistaMTA.get(i).getUsuari()); 
                 st.setString(2, llistaMTA.get(i).getPassword()); 
-                st.setString(3, llistaMTA.get(i).getPracticeTest()); 
-
+                st.setString(3, llistaMTA.get(i).getPracticeTest());
+                st.setDate(4, new Date(System.currentTimeMillis()));
+                st.setInt(5, 0);
                 st.executeUpdate(); 
                 con.close();
                 st.close(); 

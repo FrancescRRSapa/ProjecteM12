@@ -19,7 +19,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class Utilitats {
     public static String Encriptar(String texto) {
 
-        String secretKey = "qualityinfosolutions"; //llave para encriptar datos
+        String secretKey = "certif"; //llave para encriptar datos
         String base64EncryptedString = "";
 
         try {
@@ -44,7 +44,7 @@ public class Utilitats {
 
     public static String Desencriptar(String textoEncriptado) throws Exception {
 
-        String secretKey = "qualityinfosolutions"; //llave para encriptar datos
+        String secretKey = "certif"; //llave para encriptar datos
         String base64EncryptedString = "";
 
         try {
