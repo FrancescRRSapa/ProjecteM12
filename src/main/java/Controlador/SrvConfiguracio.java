@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ferna
  */
-@WebServlet(name = "SrvLlistarConfiguracio", urlPatterns = {"/SrvLlistarConfiguracio"})
-public class SrvLlistarConfiguracio extends HttpServlet {
+@WebServlet(name = "SrvConfiguracio", urlPatterns = {"/SrvConfiguracio"})
+public class SrvConfiguracio extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -62,7 +62,16 @@ public class SrvLlistarConfiguracio extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        try {
+            Configuracio c = ConfiguracioDAO.llistar();
+            request.setAttribute("configuracio", c);
+            request.getRequestDispatcher("configuracio.jsp").forward(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SrvConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(SrvConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -76,16 +85,7 @@ public class SrvLlistarConfiguracio extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
             //processRequest(request, response);
-            Configuracio c = ConfiguracioDAO.llistar();
-            request.setAttribute("configuracio", c);
-            request.getRequestDispatcher("configuracio.jsp").forward(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SrvLlistarConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(SrvLlistarConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
     }
 
