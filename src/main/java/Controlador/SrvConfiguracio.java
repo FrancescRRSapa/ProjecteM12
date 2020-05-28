@@ -9,6 +9,7 @@ import DAO.ConfiguracioDAO;
 import Model.Configuracio;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -86,7 +87,20 @@ public class SrvConfiguracio extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             //processRequest(request, response);
-        
+        Configuracio c = new Configuracio(  Integer.parseInt(request.getParameter("codisMin")),
+                                            Integer.parseInt(request.getParameter("alumnesAula")),
+                                            request.getParameter("direccioCorreu"),
+                                            request.getParameter("contrasenyaCorreu"),
+                                            request.getParameter("correuEnviaCodis"),
+                                            request.getParameter("correuEnviaAlertaCodis"));
+        try {
+            ConfiguracioDAO.modificar(c);
+        } catch (SQLException ex) {
+            Logger.getLogger(SrvConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SrvConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        request.getRequestDispatcher("srvConfiguracio").forward(request, response);
     }
 
     /**
