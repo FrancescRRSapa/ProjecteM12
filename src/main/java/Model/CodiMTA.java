@@ -5,14 +5,19 @@
  */
 package Model;
 
+import java.sql.Date;
+
 /**
  *
  * @author ferna
  */
 public class CodiMTA extends Codi{
 
-    public CodiMTA(String usuari, String password, String practiceTest) {
-        super(usuari, password, practiceTest);
+    public CodiMTA(String usuari, String password, String practiceTest, Date data, int usuariId) {
+        super(usuari, password, practiceTest, data, usuariId);
     }
     
+    public CodiMTA(String usuari, String password, String practiceTest){
+        super(usuari, password, practiceTest);
+    }
 }

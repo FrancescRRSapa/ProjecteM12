@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.sql.Date;
+
 /**
  *
  * @author Francesc
@@ -13,15 +15,24 @@ public class Codi {
     private String usuari;
     private String password;
     private String practiceTest;
+    private Date data;
+    private int usuariId;
+    private String codiExamen;
 
-    //Constructor
-    public Codi(String usuari, String password, String practiceTest) {
+    public Codi(String usuari, String password, String practiceTest, Date data, int usuariId) {
+        this.usuari = usuari;
+        this.password = password;
+        this.practiceTest = practiceTest;
+        this.data = data;
+        this.usuariId = usuariId;
+    }
+    
+    public Codi(String usuari, String password, String practiceTest){
         this.usuari = usuari;
         this.password = password;
         this.practiceTest = practiceTest;
     }
-    
-    //GETTERS I SETTERS
+
     public String getUsuari() {
         return usuari;
     }
@@ -46,7 +57,23 @@ public class Codi {
         this.practiceTest = practiceTest;
     }
 
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public int getUsuariId() {
+        return usuariId;
+    }
+
+    public void setUsuariId(int usuariId) {
+        this.usuariId = usuariId;
+    }
+
     public String getCodiExamen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return codiExamen;
     }
 }
