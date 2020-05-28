@@ -2,6 +2,7 @@ Model\GrupPartit.class
 Controlador\SrvConfiguracio.class
 DAO\ConnexioBDD.class
 Model\CodiMTA.class
+Model\LlistaHoresExamens.class
 DAO\Conexio.class
 Model\Configuracio.class
 Model\LlistaCodis.class
@@ -14,7 +15,9 @@ DAO\Conexion.class
 Model\Concepte.class
 DAO\ConcepteDAO.class
 Model\LlistaConceptes.class
+Model\HoraExamen.class
 DAO\ReservesDAO.class
+DAO\HoresExamensDAO.class
 Model\Codi.class
 DAO\TarifaDAO.class
 Model\Utilitats.class

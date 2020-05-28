@@ -1,5 +1,7 @@
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\Conexion.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\HoraExamen.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaTarifes.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaHoresExamens.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\TarifaDAO.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\ReservesDAO.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Codi.java
@@ -18,6 +20,7 @@ C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\pro
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Tarifa.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlegirCSV.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\ConcepteDAO.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\HoresExamensDAO.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaUsuaris.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaReserves.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Controlador\SrvSesioUsuari.java
