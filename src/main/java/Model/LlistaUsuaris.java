@@ -12,8 +12,18 @@ import java.util.ArrayList;
  * @author ferna
  */
 public class LlistaUsuaris {
-    /*
-    ArrayList<Usuari> llistatUsuaris = ArrayList<Usuari>();
-    */
+    private ArrayList<Usuari> llistatUsuaris = new ArrayList<Usuari>();
+    
+    public void add(Usuari u){
+            llistatUsuaris.add(u);
+    }
+    
+    public int size(){
+        return llistatUsuaris.size();
+    }
+    
+    public Usuari get(int i){
+        return llistatUsuaris.get(i);
+    }
     
 }
