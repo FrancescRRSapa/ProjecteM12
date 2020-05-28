@@ -22,7 +22,7 @@ public class Conexio {
     public static Connection initializeDatabase() throws SQLException, ClassNotFoundException 
     { 
         String dbDriver = "com.mysql.jdbc.Driver"; 
-        String mysqlConnUrl = "jdbc:mysql://localhost:3306/practicam12";
+        String mysqlConnUrl = "jdbc:mysql://localhost:3306/projecte";
         String dbUsername = "root"; 
         String dbPassword = ""; 
         Class.forName(dbDriver); 
