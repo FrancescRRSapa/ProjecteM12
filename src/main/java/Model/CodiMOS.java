@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.sql.Date;
+
 /**
  *
  * @author ferna
@@ -12,7 +14,12 @@ package Model;
 public class CodiMOS extends Codi{
     private String codiExamen;
 
-    public CodiMOS(String codiExamen, String usuari, String password, String practiceTest) {
+    public CodiMOS(String codiExamen, String usuari, String password, String practiceTest, Date data, int usuariId) {
+        super(usuari, password, practiceTest, data, usuariId);
+        this.codiExamen = codiExamen;
+    }
+    
+    public CodiMOS(String codiExamen, String usuari, String password, String practiceTest){
         super(usuari, password, practiceTest);
         this.codiExamen = codiExamen;
     }

@@ -5,11 +5,15 @@
  */
 package DAO;
 import Model.Codi;
+import Model.CodiMOS;
+import Model.CodiMTA;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import Model.LlistaCodis;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.Statement;
 /**
  *
  * @author Francesc
@@ -42,6 +46,79 @@ public class CodisDAO {
        }
     }
     
+    public static LlistaCodis llistarCodisMOS()
+    {
+        LlistaCodis llista = new LlistaCodis();
+        try
+        {
+            Connection con = Conexio.initializeDatabase();
+            Statement stmt = con.createStatement();
+            
+            String sql = "SELECT * FROM codis_mos";
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            while(rs.next())
+            {
+                String usuari  = rs.getString("usuari");
+                String password = rs.getString("password");
+                String practiceTest = rs.getString("practice_test");
+                String examen = rs.getString("examen");
+                Date data = rs.getDate("date");
+                int usuariId = rs.getInt("usuari_id");
+                
+                CodiMOS c = new CodiMOS(usuari, password, practiceTest, examen, data, usuariId);
+                //llistaFeines.add(f);
+                llista.add(c);
+            }
+            rs.close();
+            con.close(); 
+            
+        }
+        catch (Exception e) { 
+            e.printStackTrace();
+        } 
+        //return llistaFeines;
+        return llista;
+    }
+    
+    public static void esborrarCodisMOS(Date data)
+    {
+        try
+        {
+            Connection con = Conexio.initializeDatabase();
+            PreparedStatement st = con.prepareStatement("DELETE FROM codis_mos WHERE date = '" + data + "'");
+
+            st.executeUpdate(); 
+
+            st.close(); 
+            con.close(); 
+        }
+        catch (Exception e) 
+        { 
+            e.printStackTrace();
+        }
+    }
+    
+    public static void assignarCodiMOS(int id, int usuari_id)
+    {
+        try
+        {
+            Connection con = Conexio.initializeDatabase();
+            
+            PreparedStatement st = con.prepareStatement("UPDATE codis_mos SET usuari_id = '" + usuari_id + "' WHERE usuari = '" + id + "'"); 
+
+            st.executeUpdate(); 
+
+            st.close(); 
+            con.close(); 
+        }
+        catch (Exception e) 
+        { 
+            e.printStackTrace();
+            
+        } 
+    }
+    
     //Per inserir codis de MTA
     public static void inserirCodisMTA(LlistaCodis llistaMTA){
        try{
@@ -63,5 +140,76 @@ public class CodisDAO {
             e.printStackTrace();
         }finally{
        }
+    }
+    public static LlistaCodis llistarCodisMTA()
+    {
+        LlistaCodis llista = new LlistaCodis();
+        try
+        {
+            Connection con = Conexio.initializeDatabase();
+            Statement stmt = con.createStatement();
+            
+            String sql = "SELECT * FROM codis_mta";
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            while(rs.next())
+            {
+                String usuari  = rs.getString("usuari");
+                String password = rs.getString("password");
+                String practiceTest = rs.getString("practice_test");
+                Date data = rs.getDate("date");
+                int usuariId = rs.getInt("usuari_id");
+                
+                CodiMTA c = new CodiMTA(usuari, password, practiceTest, data, usuariId);
+                //llistaFeines.add(f);
+                llista.add(c);
+            }
+            rs.close();
+            con.close(); 
+            
+        }
+        catch (Exception e) { 
+            e.printStackTrace();
+        } 
+        //return llistaFeines;
+        return llista;
+    }
+    
+    public static void esborrarCodisMTA(Date data)
+    {
+        try
+        {
+            Connection con = Conexio.initializeDatabase();
+            PreparedStatement st = con.prepareStatement("DELETE FROM codis_mta WHERE date = '" + data + "'");
+
+            st.executeUpdate(); 
+
+            st.close(); 
+            con.close(); 
+        }
+        catch (Exception e) 
+        { 
+            e.printStackTrace();
+        }
+    }
+    
+    public static void assignarCodiMTA(int id, int usuari_id)
+    {
+        try
+        {
+            Connection con = Conexio.initializeDatabase();
+            
+            PreparedStatement st = con.prepareStatement("UPDATE codis_mta SET usuari_id = '" + usuari_id + "' WHERE usuari = '" + id + "'"); 
+
+            st.executeUpdate(); 
+
+            st.close(); 
+            con.close(); 
+        }
+        catch (Exception e) 
+        { 
+            e.printStackTrace();
+            
+        } 
     }
 }

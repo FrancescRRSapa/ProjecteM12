@@ -80,7 +80,7 @@ public class SrvLlistarConfiguracio extends HttpServlet {
             //processRequest(request, response);
             Configuracio c = ConfiguracioDAO.llistar();
             request.setAttribute("configuracio", c);
-            request.getRequestDispatcher("configuraco.jsp").forward(request, response);
+            request.getRequestDispatcher("configuracio.jsp").forward(request, response);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SrvLlistarConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
