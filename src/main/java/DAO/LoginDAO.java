@@ -21,7 +21,7 @@ public class LoginDAO {
         PreparedStatement pst;
         ResultSet rs;
         String tipusUsuari= "0";
-        String sql = "select tipusUsuari from usuaris where nom='" + u + "' and contrassenya='" + c + "'";
+        String sql = "select tipus_usuari from usuaris where nom='" + u + "' and password='" + c + "'";
         pst = conn.prepareStatement(sql);
         rs = pst.executeQuery();
         while(rs.next()){
@@ -35,12 +35,12 @@ public class LoginDAO {
     public static String tipusUsuari (String nomUsuari, String contrassenya) throws SQLException, ClassNotFoundException {
                 Connection con = Conexio.initializeDatabase();
                 Statement stmt = con.createStatement();
-		String sql = "Select tipusUsuari from usuaris where nom='" + nomUsuari + "' AND contrassenya='" + contrassenya + "';";
+		String sql = "Select tipusUsuari from usuaris where nom='" + nomUsuari + "' AND password='" + contrassenya + "';";
                 String tipusUsuari = "";
 	   //execute sql query
 	   	ResultSet resultat = stmt.executeQuery(sql);
 		while(resultat.next()){
-			tipusUsuari = resultat.getString("tipusUsuari");
+			tipusUsuari = resultat.getString("tipus_usuari");
 		}
                 resultat.close();
                 stmt.close();
