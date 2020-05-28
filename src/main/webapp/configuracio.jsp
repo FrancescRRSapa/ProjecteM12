@@ -46,25 +46,52 @@
             </div> 
         </header>
         <h1>Benvingut/da a la configuració</h1>
+        <% Configuracio c = (Configuracio) request.getAttribute("configuracio");%>
             <summary>Configuració de correu</summary>
             <fieldset id="configuracio">
                 <form id="formulari" action="SrvUpdateConfiguracio" method="POST">
-                    <label for="codisMin">Número mínim de codis</label>
-                    <br>
-                    <%
-                        Configuracio c = (Configuracio) request.getAttribute("configuracio");
-                    %>
-                    
-                    <div><%=c.getCodisMin()%></div>
-                    <input type="number" name="codisMin" value="">
-                    <br>
-                    <label for="correuEnviaCodis">Modifica el correu per enviar codis:</label>
-                    <br>
-                    <textarea rows="4" cols="50" name="correuEnviaCodis" form="formulari"></textarea>
-                    <br>
-                    <input type="submit" value="Submit">
+                    <!-- CODIS MINIM -->
+                    <div>
+                        <label for="codisMin">Número mínim de codis</label>
+                        <br>
+                        <input type="number" name="codisMin" value="<%=c.getCodisMin()%>">
+                    </div>
+                    <!-- ALUMNES PER AULA -->
+                    <div>
+                        <label for="alumnesAula">Número mínim de codis</label>
+                        <br>
+                        <input type="number" name="alumnesAula" value="<%=c.getAlumnesAula()%>">
+                    </div>
+                    <!-- DIRECCIO CORREU -->
+                    <div>
+                        <label for="direccioCorreu">Direcció de correu</label>
+                        <br>
+                        <input type="text" name="direccioCorreu" value="<%=c.getDireccioCorreu()%>">
+                    </div>
+                    <!-- Contrasenya Correu -->
+                    <div>
+                        <label for="contrasenyaCorreu">Contrassenya del correu</label>
+                        <br>
+                        <input type="text" name="contrasenyaCorreu" value="<%=c.getContrasenyaCorreu()%>">
+                    </div>
+                    <!-- Correu Envia Codis -->
+                    <div>
+                        <label for="correuEnviaCodis">Correu per enviar codis</label>
+                        <br>
+                        <textarea name="correuEnviaCodis" form="formulari" rows="10" cols="50"><%=c.getCorreuEnviaCodis()%></textarea>
+                    </div>
+                    <!-- Correu Envia Alerta Codis -->
+                    <div>
+                        <label for="correuEnviaAlertaCodis">Correu per enviar alerta de pocs codis</label>
+                        <br>
+                        <textarea name="correuEnviaAlertaCodis" form="formulari" rows="10" cols="50"><%=c.getCorreuEnviaAlertaCodis()%></textarea>
+                    </div>
+                    <div>
+                        <label for="submit">Enviar canvis!</label>
+                        <br>
+                        <input type="submit">
+                    </div>
                 </form>
             </fieldset>
-        
     </body>
 </html>
