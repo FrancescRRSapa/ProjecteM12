@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/formularis.js"></script>
     </head>
     <body>
         <header>
@@ -49,7 +50,7 @@
         <% Configuracio c = (Configuracio) request.getAttribute("configuracio");%>
             <summary>Configuració de correu</summary>
             <fieldset id="configuracio">
-                <form id="formulari" action="SrvConfiguracio" method="POST">
+                <form id="formulari" action="SrvConfiguracio" method="POST" onsubmit="formulariConfiguracio()">
                     <!-- CODIS MINIM -->
                     <div>
                         <label for="codisMin">Número mínim de codis</label>

@@ -4,11 +4,9 @@ DAO\ConnexioBDD.class
 Model\CodiMTA.class
 Model\LlistaHoresExamens.class
 DAO\ExamensDAO.class
-Model\Mail.class
 Model\LlistaExamens.class
 DAO\Conexio.class
 Model\Configuracio.class
-Model\Mail$1.class
 Model\LlistaCodis.class
 Model\LlistaReserves.class
 DAO\GrupPartitDAO.class
@@ -21,10 +19,8 @@ Model\Concepte.class
 DAO\ConcepteDAO.class
 Model\LlistaConceptes.class
 Model\HoraExamen.class
-Model\LlistaCertificacions.class
 DAO\ReservesDAO.class
 DAO\HoresExamensDAO.class
-DAO\CertificacioDAO.class
 Model\Codi.class
 DAO\TarifaDAO.class
 Model\Utilitats.class
@@ -39,4 +35,3 @@ Model\CodiMOS.class
 DAO\ConfiguracioDAO.class
 Model\LlegirCSV.class
 DAO\LoginDAO.class
-Model\Certificacio.class
