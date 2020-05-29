@@ -1,15 +1,24 @@
 "use strict";
+/**
+ * @author Francesc Roca
+ * @returns {undefined}
+ * Funció que torna a la pàgina anterior.
+ */
+function returnToPreviousPage() {
+    window.history.back();
+}
 
 /**
  * @author Sergio Fernandez
  * @author Francesc Roca
  * @param {type} e
  * @returns {undefined}
- * Funció per comprovar els camps del formulari són correctes, si no, evitem que es pugui enviar el formulari
+ * Funció per comprovar els camps del formulari són correctes, si no, evitem que es pugui enviar el formulari.
  */
-function formulariConfiguracio(e){
+function formulariConfiguracio(){
     console.log("He entrat!");
-    var codisMin = document.getElementById("codisMin").value();
+    console.log(document.getElementById('codisMin').value);
+    var codisMin = document.getElementById('codisMin').value;
     var alumnesAula = document.getElementById("alumnesAula").value;
     var direccioCorreu = document.getElementById("direccioCorreu").value;
     var contrasenyaCorreu = document.getElementById("contrasenyaCorreu").value;
@@ -17,23 +26,24 @@ function formulariConfiguracio(e){
     var correuEnviaAlertaCodis = document.getElementById("correuEnviaAlertaCodis").value;
     
     if(isNaN(codisMin) || codisMin < 0){
-        console.log("No pot ser!");
-        e.preventDefault();
+        alert("validation failed false");
+        returnToPreviousPage();
+        return false;
     }
     
     if(isNaN(alumnesAula) || alumnesAula < 0){
-        e.preventDefault();
+        alert("validation failed false");
+        returnToPreviousPage();
+        return false;
     }
     
     if(!validateEmail(direccioCorreu)){
-        e.preventDefault();
+        alert("validation failed false");
+        returnToPreviousPage();
+        return false;
     }
     
-    
-    
-    
-    //PER EVITAR QUE REALITZI EL SUBMIT
-    //e.preventDefault();
+    return true; 
 }
 
 function validateEmail(email) {

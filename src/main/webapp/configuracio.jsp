@@ -50,7 +50,7 @@
         <% Configuracio c = (Configuracio) request.getAttribute("configuracio");%>
             <summary>Configuració de correu</summary>
             <fieldset id="configuracio">
-                <form id="formulari" action="SrvConfiguracio" method="POST" onsubmit="formulariConfiguracio">
+                <form id="formulari" action="SrvConfiguracio" method="POST" onsubmit="event.preventDefault(); formulariConfiguracio();">
                     <!-- CODIS MINIM -->
                     <div>
                         <label for="codisMin">Número mínim de codis</label>
