@@ -48,7 +48,7 @@ public class ConfiguracioDAO {
             PreparedStatement pt = con.prepareStatement("UPDATE configuracio SET codis_min = '" + c.getCodisMin()
                                                             + "', alumnes_aula= '" + c.getAlumnesAula()
                                                             + "', direccio_correu= '" + c.getDireccioCorreu()
-                                                            + "', contrasenya_correu= '" + c.getContrasenyaCorreu()
+                                                            + "', contrasenya_correu= '" + Utilitats.Encriptar(c.getContrasenyaCorreu())
                                                             + "', correu_envia_codis= '" + c.getCorreuEnviaCodis()
                                                             + "', correu_envia_alerta_codis= '" + c.getCorreuEnviaAlertaCodis() + "'");
 
