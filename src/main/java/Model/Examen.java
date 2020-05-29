@@ -18,10 +18,10 @@ public class Examen {
     private boolean pagat;
     private Date data_solicitud;
     private Date data_pagament;
-    private int codi_id;
+    private String codi_id;
     private String estat;
 
-    public Examen(int id_examen, int id_usuari, int id_certificacio, boolean pagat, Date data_solicitud, Date data_pagament, int codi_id, String estat) {
+    public Examen(int id_examen, int id_usuari, int id_certificacio, boolean pagat, Date data_solicitud, Date data_pagament, String codi_id, String estat) {
         this.id_examen = id_examen;
         this.id_usuari = id_usuari;
         this.id_certificacio = id_certificacio;
@@ -80,11 +80,11 @@ public class Examen {
         this.data_pagament = data_pagament;
     }
 
-    public int getCodi_id() {
+    public String getCodi_id() {
         return codi_id;
     }
 
-    public void setCodi_id(int codi_id) {
+    public void setCodi_id(String codi_id) {
         this.codi_id = codi_id;
     }
 

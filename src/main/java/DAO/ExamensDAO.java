@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import Model.Codi;
 import Model.Examen;
 import Model.LlistaExamens;
 import java.sql.Connection;
@@ -32,7 +33,7 @@ public class ExamensDAO {
             ps.close();
         }
     }
-    /*
+    
     public static LlistaExamens llistar() throws SQLException, ClassNotFoundException
     {
         LlistaExamens llistatExamens = new LlistaExamens();
@@ -45,15 +46,21 @@ public class ExamensDAO {
             
             while(rs.next())
             {
-                int idExamen = rs.getInt("id_grup_partit");
-                String nom = rs.getString("nom");
-                Date dataAlta = rs.getDate("data_alta");
-                Date dataBaixa = rs.getDate("data_baixa");
-                GrupPartit g = new GrupPartit(idGrupPartit, nom, dataAlta, dataBaixa);
-                llistatGrupsPartits.add(g);
+                int idExamen = rs.getInt("id_examen");
+                int idUsuari = rs.getInt("id_usuari");
+                int idCertificacio = rs.getInt("id_certificacio");
+                boolean pagat = rs.getBoolean("pagat");
+                Date dataSolicitud = rs.getDate("data_solicitud");
+                Date dataPagament = rs.getDate("data_pagament");
+                String codiId = rs.getString("codi_id");
+                String estat = rs.getString("estat");
+                
+                Examen e = new Examen(idExamen, idUsuari, idCertificacio, pagat, dataSolicitud, dataPagament, codiId, estat);
+                llistatExamens.add(e);
             }
             rs.close();
-            con.close(); 
+            stmt.close();
+            con.close();
             
             return llistatExamens;
     }
@@ -61,7 +68,7 @@ public class ExamensDAO {
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
             Connection con = Conexio.initializeDatabase(); 
-            PreparedStatement st = con.prepareStatement("DELETE FROM grup_partit WHERE id_tarifa = '" + id + "'"); 
+            PreparedStatement st = con.prepareStatement("DELETE FROM usuari_certificacio WHERE id_examen = '" + id + "'"); 
 
             st.executeUpdate(); 
 
@@ -69,18 +76,30 @@ public class ExamensDAO {
             con.close(); 
     }
     
-    public static void modificar(GrupPartit g) throws SQLException, ClassNotFoundException{
-            Connection con = Conexio.initializeDatabase(); 
-
-            PreparedStatement pt = con.prepareStatement("UPDATE grup_partit SET nom = '" + g.getNom()
-                                                            + "', data_alta= '" + g.getDataAlta()
-                                                            + "', data_baixa= '" + g.getDataBaixa()
-                                                            + "' WHERE id_grup_partit = '" + g.getIdGrupPartit() + "'"); 
+    public static void pagat(Examen e,Codi c) throws SQLException, ClassNotFoundException{
+            Connection con = Conexio.initializeDatabase();
+            
+            PreparedStatement pt = con.prepareStatement("UPDATE usuari_certificacio SET pagat = '" + true
+                                                            + "', data_pagament= '" + new Date(System.currentTimeMillis())
+                                                            + "', codi_id= '" + c.getUsuari()
+                                                            + "', estat= '" + "No evaluat"
+                                                            + "' WHERE id_examen = '" + e.getId_examen() + "'"); 
 
             pt.executeUpdate(); 
 
             pt.close(); 
             con.close();
     }
-*/
+    
+    public static void qualificat(Examen e, String resultat) throws SQLException, ClassNotFoundException{
+            Connection con = Conexio.initializeDatabase();
+            
+            PreparedStatement pt = con.prepareStatement("UPDATE usuari_certificacio SET  estat= '" + resultat
+                                                            + "' WHERE id_examen = '" + e.getId_examen() + "'"); 
+
+            pt.executeUpdate(); 
+
+            pt.close(); 
+            con.close();
+    }
 }
