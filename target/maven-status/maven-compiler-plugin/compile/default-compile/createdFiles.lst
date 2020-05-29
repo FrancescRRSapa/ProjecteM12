@@ -3,11 +3,14 @@ Controlador\SrvConfiguracio.class
 DAO\ConnexioBDD.class
 Model\CodiMTA.class
 Model\LlistaHoresExamens.class
+DAO\ExamensDAO.class
+Model\LlistaExamens.class
 DAO\Conexio.class
 Model\Configuracio.class
 Model\LlistaCodis.class
 Model\LlistaReserves.class
 DAO\GrupPartitDAO.class
+Model\Examen.class
 DAO\UsuarisDAO.class
 Controlador\SrvSesioUsuari.class
 Model\Reserva.class
