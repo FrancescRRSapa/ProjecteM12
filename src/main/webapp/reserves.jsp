@@ -4,6 +4,7 @@
     Author     : Francesc
 --%>
 
+<%@page import="Model.LlistaReserves"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -48,7 +49,16 @@
             clicar redirigir a un altre pàgina on es pugui donar a Validar i així acceptar-la
             Que sigui algo semblant a l'examen de l'UF2 de M7.
             Comentar amb Sergio.-->
-            <a href="validarReserva.jsp">Validar una reserva</a>
+            <table>
+            <% 
+                LlistaReserves lc = (LlistaReserves) request.getAttribute("llistaReserves");
+                for(int i = 0; i < lc.size(); i++){
+                    out.print("<tr>");
+                    out.print("<td>" + lc.get(i).getIdReserva() + "</td><td>" + lc.get(i).getIdUsuari() + "</td><td>"  + lc.get(i).getIdHoraExamen() + "</td>");
+                    out.print("</tr>");
+                }
+            %>
+        </table>
         </div>
     </body>
 </html>

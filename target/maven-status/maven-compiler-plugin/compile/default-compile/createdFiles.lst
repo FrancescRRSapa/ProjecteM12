@@ -19,8 +19,10 @@ Model\Concepte.class
 DAO\ConcepteDAO.class
 Model\LlistaConceptes.class
 Model\HoraExamen.class
+Model\LlistaCertificacions.class
 DAO\ReservesDAO.class
 DAO\HoresExamensDAO.class
+DAO\CertificacioDAO.class
 Model\Codi.class
 DAO\TarifaDAO.class
 Model\Utilitats.class
@@ -35,3 +37,4 @@ Model\CodiMOS.class
 DAO\ConfiguracioDAO.class
 Model\LlegirCSV.class
 DAO\LoginDAO.class
+Model\Certificacio.class
