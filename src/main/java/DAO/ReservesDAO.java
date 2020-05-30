@@ -21,8 +21,8 @@ public class ReservesDAO {
     public static void inserir(Reserva r) throws SQLException, ClassNotFoundException{
         try (Connection con = Conexio.initializeDatabase()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO reserva VALUES(?,?)");
-            ps.setInt(1, r.getIdUsuari());
-            ps.setInt(2, r.getIdHoraExamen());
+            ps.setInt(1, r.getUsuari().getIdUsuari());
+            ps.setInt(2, r.getHoraExamen().getIdHoraExamen());
             
             ps.executeUpdate();
             

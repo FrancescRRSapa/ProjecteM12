@@ -58,6 +58,25 @@ public class HoresExamensDAO {
             return llistatHoresExamens;
     }
     
+    public static HoraExamen buscar(int id) throws SQLException, ClassNotFoundException{
+        Connection con = Conexio.initializeDatabase(); 
+        Statement stmt = con.createStatement();
+
+        String sql = "SELECT * FROM hora_examen WHERE id_hora_examen='" + id + "'";
+        ResultSet rs = stmt.executeQuery(sql);
+        
+        int idHoraExamen = rs.getInt("id_hora_examen");
+        Date diaSetmana = rs.getDate("dia_setmana");
+        String hora = rs.getString("hora");
+        String tipus = rs.getString("tipus");
+        HoraExamen h = new HoraExamen(idHoraExamen, diaSetmana, hora, tipus);
+        
+        rs.close();
+        con.close();
+        
+        return h;
+    }
+    
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
             Connection con = Conexio.initializeDatabase(); 

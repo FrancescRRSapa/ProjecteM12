@@ -5,19 +5,23 @@
  */
 package Model;
 
+import DAO.HoresExamensDAO;
+import DAO.UsuarisDAO;
+import java.sql.SQLException;
+
 /**
  *
  * @author ferna
  */
 public class Reserva {
     private int idReserva;
-    private int idUsuari;
-    private int idHoraExamen;
+    private Usuari usuari;
+    private HoraExamen horaExamen;
 
-    public Reserva(int idReserva, int idUsuari, int idHoraExamen) {
+    public Reserva(int idReserva, int idUsuari, int idHoraExamen) throws SQLException, ClassNotFoundException {
         this.idReserva = idReserva;
-        this.idUsuari = idUsuari;
-        this.idHoraExamen = idHoraExamen;
+        this.usuari = UsuarisDAO.buscar(idUsuari);
+        this.horaExamen = HoresExamensDAO.buscar(idHoraExamen);
     }
 
     public int getIdReserva() {
@@ -28,20 +32,20 @@ public class Reserva {
         this.idReserva = idReserva;
     }
 
-    public int getIdUsuari() {
-        return idUsuari;
+    public Usuari getUsuari() {
+        return usuari;
     }
 
-    public void setIdUsuari(int idUsuari) {
-        this.idUsuari = idUsuari;
+    public void setUsuari(Usuari usuari) {
+        this.usuari = usuari;
     }
 
-    public int getIdHoraExamen() {
-        return idHoraExamen;
+    public HoraExamen getHoraExamen() {
+        return horaExamen;
     }
 
-    public void setIdHoraExamen(int idHoraExamen) {
-        this.idHoraExamen = idHoraExamen;
+    public void setHoraExamen(HoraExamen horaExamen) {
+        this.horaExamen = horaExamen;
     }
     
 }
