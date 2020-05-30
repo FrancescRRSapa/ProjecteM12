@@ -64,6 +64,7 @@ public class HoresExamensDAO {
 
         String sql = "SELECT * FROM hora_examen WHERE id_hora_examen='" + id + "'";
         ResultSet rs = stmt.executeQuery(sql);
+        rs.next();
         
         int idHoraExamen = rs.getInt("id_hora_examen");
         Date diaSetmana = rs.getDate("dia_setmana");

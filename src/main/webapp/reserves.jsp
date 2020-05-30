@@ -5,6 +5,8 @@
 --%>
 
 <%@page import="Model.LlistaReserves"%>
+<%@page import="Model.Usuari"%>
+<%@page import="Model.HoraExamen"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -47,14 +49,14 @@
             <table>
                 <thead>
                 <th>Id Reserva</th>
-                <th>Id Usuari</th>
-                <th>Id Hora Examen</th>
+                <th>Nom Usuari</th>
+                <th>Dia i hora examen</th>
                 </thead>
             <% 
                 LlistaReserves lc = (LlistaReserves) request.getAttribute("llistaReserves");
                 for(int i = 0; i < lc.size(); i++){
                     out.print("<tr>");
-                    out.print("<td>" + lc.get(i).getIdReserva() + "</td><td>" + lc.get(i).getIdUsuari() + "</td><td>"  + lc.get(i).getIdHoraExamen() + "</td>");
+                    out.print("<td>" + lc.get(i).getIdReserva() + "</td><td>" + lc.get(i).getUsuari().getNom() + "</td><td>"  + lc.get(i).getHoraExamen().getDiaSetmana() + "-" + lc.get(i).getHoraExamen().getHora() +  "</td>");
                     out.print("</tr>");
                 }
             %>
