@@ -4,9 +4,11 @@ DAO\ConnexioBDD.class
 Model\CodiMTA.class
 Model\LlistaHoresExamens.class
 DAO\ExamensDAO.class
+Model\Mail.class
 Model\LlistaExamens.class
 DAO\Conexio.class
 Model\Configuracio.class
+Model\Mail$1.class
 Model\LlistaCodis.class
 Model\LlistaReserves.class
 DAO\GrupPartitDAO.class
@@ -29,6 +31,7 @@ Model\Utilitats.class
 Model\LlistaUsuaris.class
 Model\LlistaTarifes.class
 Model\Tarifa.class
+Controlador\SrvLlistarReserva.class
 DAO\CodisDAO.class
 Model\LlistaGrupsPartits.class
 Model\Usuari.class
