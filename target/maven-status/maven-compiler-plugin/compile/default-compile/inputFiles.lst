@@ -23,6 +23,7 @@ C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\pro
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\CodiMTA.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Tarifa.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlegirCSV.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Controlador\SrvLlistarReserva.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\ConcepteDAO.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\DAO\HoresExamensDAO.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaUsuaris.java
@@ -37,4 +38,5 @@ C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\pro
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\LlistaGrupsPartits.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Controlador\SrvConfiguracio.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Examen.java
+C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Mail.java
 C:\Users\Francesc\Documents\Documents classe\DAW2\M12 - Projecte\proyectom12\projectem12\ProjecteM12\src\main\java\Model\Reserva.java

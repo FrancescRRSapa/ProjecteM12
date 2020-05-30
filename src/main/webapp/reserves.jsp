@@ -44,12 +44,12 @@
             </div> 
         </header>
         <div>
-            <h1>Reserves a validar</h1>
-            <!-- Mostrar una taula amb totes les peticions de reserves i fer que es puguin clicar, al 
-            clicar redirigir a un altre pàgina on es pugui donar a Validar i així acceptar-la
-            Que sigui algo semblant a l'examen de l'UF2 de M7.
-            Comentar amb Sergio.-->
             <table>
+                <thead>
+                <th>Id Reserva</th>
+                <th>Id Usuari</th>
+                <th>Id Hora Examen</th>
+                </thead>
             <% 
                 LlistaReserves lc = (LlistaReserves) request.getAttribute("llistaReserves");
                 for(int i = 0; i < lc.size(); i++){

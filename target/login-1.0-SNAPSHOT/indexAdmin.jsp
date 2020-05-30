@@ -25,7 +25,7 @@
                 <nav>
                     <a href="codisAdmin.jsp">Admin. codis</a>
                     <a href="certificacions.jsp">Certificacions</a>                                 
-                    <a href="reserves.jsp">Reserves</a>
+                    <a href="SrvLlistarReserva">Reserves</a>
                     <a href="pagament.jsp">Pagament</a>
                     <a href="SrvConfiguracio">Configuracio</a>
         <%
