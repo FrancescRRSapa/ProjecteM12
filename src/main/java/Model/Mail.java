@@ -35,7 +35,7 @@ public class Mail {
 
         props.put("from", "s.fernandez@sapalomera.cat");
         props.put("username", "s.fernandez@sapalomera.cat");
-        props.put("password", "12kalamar34");
+        props.put("password", "xxx");
     }
 
     public void enviar(String to, String subject, String content, String rutaArchivo) throws MessagingException {
