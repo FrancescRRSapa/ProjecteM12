@@ -9,7 +9,6 @@ function returnToPreviousPage() {
 }
 
 /**
- * @author Sergio Fernandez
  * @author Francesc Roca
  * @param {type} e
  * @returns {undefined}
@@ -26,19 +25,19 @@ function formulariConfiguracio(){
     var correuEnviaAlertaCodis = document.getElementById("correuEnviaAlertaCodis").value;
     
     if(isNaN(codisMin) || codisMin < 0){
-        alert("validation failed false");
+        alert("Els codis mínims no són correctes.");
         returnToPreviousPage();
         return false;
     }
     
     if(isNaN(alumnesAula) || alumnesAula < 0){
-        alert("validation failed false");
+        alert("La quantitat d'alumnes no és correcte.");
         returnToPreviousPage();
         return false;
     }
     
     if(!validateEmail(direccioCorreu)){
-        alert("validation failed false");
+        alert("El correu escrit no és correcte.");
         returnToPreviousPage();
         return false;
     }
@@ -46,6 +45,12 @@ function formulariConfiguracio(){
     return true; 
 }
 
+/**
+ * @author Francesc Roca
+ * @param {type} email
+ * @returns {Boolean}
+ * Funció que retorna true o false depent de si el correu inserit és correcte o no.
+ */
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
