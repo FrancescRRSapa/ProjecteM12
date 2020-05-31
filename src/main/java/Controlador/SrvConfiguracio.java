@@ -100,7 +100,7 @@ public class SrvConfiguracio extends HttpServlet {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SrvConfiguracio.class.getName()).log(Level.SEVERE, null, ex);
         }
-        request.getRequestDispatcher("srvConfiguracio").forward(request, response);
+        response.sendRedirect("indexAdmin.jsp");
     }
 
     /**
