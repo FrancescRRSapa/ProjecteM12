@@ -99,3 +99,8 @@ tr:nth-child(even) {
 tr:hover {
   background: #d1d1d1;
 }
+
+
+#demanarCodi{
+    float: left;
+}
