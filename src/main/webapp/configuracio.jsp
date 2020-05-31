@@ -15,6 +15,9 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/script.js"></script>
         <script src="js/formularis.js"></script>
+        <!-- Links per editor de textarea -->
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>tinymce.init({selector:'textarea'});</script>
     </head>
     <body>
         <header>
@@ -59,7 +62,7 @@
                     </div>
                     <!-- ALUMNES PER AULA -->
                     <div>
-                        <label for="alumnesAula">Número mínim de codis</label>
+                        <label for="alumnesAula">Número màxim d'alumnes a l'aula</label>
                         <br>
                         <input type="number" name="alumnesAula" id="alumnesAula" value="<%=c.getAlumnesAula()%>">
                     </div>
@@ -73,7 +76,18 @@
                     <div>
                         <label for="contrasenyaCorreu">Contrassenya del correu</label>
                         <br>
-                        <input type="text" name="contrasenyaCorreu" id="contrasenyaCorreu" value="<%=c.getContrasenyaCorreu()%>">
+                        <input type="password" name="contrasenyaCorreu" id="contrasenyaCorreu" value="<%=c.getContrasenyaCorreu()%>">
+                        <input type="checkbox" onclick="myFunction()">Veure contrassenya
+                        <script>
+                            function myFunction() {
+                              var x = document.getElementById("contrasenyaCorreu");
+                              if (x.type === "password") {
+                                x.type = "text";
+                              } else {
+                                x.type = "password";
+                              }
+                            }
+                        </script>
                     </div>
                     <!-- Correu Envia Codis -->
                     <div>
