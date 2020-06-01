@@ -60,7 +60,6 @@
                 <input type="submit">
             </form>
         </div>
-        <!-- Posar aquí el calendari de quan es pot demanar hora per realitzar l'examen -->
         <div id="calendar">
             <h2>Calendari de dates disponibles per examens</h2>
             <table id="calendar">
