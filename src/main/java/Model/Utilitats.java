@@ -13,10 +13,16 @@ import org.apache.commons.codec.binary.Base64;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class Utilitats {
+    /**
+     * Encripta el text passat per paràmetre
+     * @param texto
+     * @return String encriptatr
+     */
     public static String Encriptar(String texto) {
 
         String secretKey = "certif"; //llave para encriptar datos
@@ -41,7 +47,12 @@ public class Utilitats {
         }
         return base64EncryptedString;
     }
-
+    /**
+     * Desencripta el text passat per paràmetre
+     * @param textoEncriptado
+     * @return
+     * @throws Exception 
+     */
     public static String Desencriptar(String textoEncriptado) throws Exception {
 
         String secretKey = "certif"; //llave para encriptar datos

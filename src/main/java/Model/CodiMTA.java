@@ -8,8 +8,9 @@ package Model;
 import java.sql.Date;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class CodiMTA extends Codi{
 

@@ -15,12 +15,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class GrupPartitDAO {
+    /**
+     * Insereix un nou GrupPartit a la base de dades
+     * @param g
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void inserir(GrupPartit g) throws SQLException, ClassNotFoundException{
-        try (Connection con = Conexio.initializeDatabase()) {
+        try (Connection con = Connexio.initializeDatabase()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO grup_partit VALUES(?,?,?,?)");
             ps.setInt(1, g.getIdGrupPartit());
             ps.setString(2, g.getNom());
@@ -32,12 +39,17 @@ public class GrupPartitDAO {
             ps.close();
         }
     }
-    
+    /**
+     * Llista tots els GrupsPartits de la base de dades
+     * @return LlistaGrupsPartits
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static LlistaGrupsPartits llistar() throws SQLException, ClassNotFoundException
     {
         LlistaGrupsPartits llistatGrupsPartits = new LlistaGrupsPartits();
             
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             Statement stmt = con.createStatement();
             
             String sql = "SELECT * FROM grup_partit";
@@ -57,10 +69,15 @@ public class GrupPartitDAO {
             
             return llistatGrupsPartits;
     }
-    
+    /**
+     * Esborra el GrupPartit que correspon al id de la base de dades
+     * @param id
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             PreparedStatement st = con.prepareStatement("DELETE FROM grup_partit WHERE id_tarifa = '" + id + "'"); 
 
             st.executeUpdate(); 
@@ -68,9 +85,14 @@ public class GrupPartitDAO {
             st.close(); 
             con.close(); 
     }
-    
+    /**
+     * Modifica el GrupPartit amb la nova informació pasada per paràmetre
+     * @param g
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void modificar(GrupPartit g) throws SQLException, ClassNotFoundException{
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
 
             PreparedStatement pt = con.prepareStatement("UPDATE grup_partit SET nom = '" + g.getNom()
                                                             + "', data_alta= '" + g.getDataAlta()

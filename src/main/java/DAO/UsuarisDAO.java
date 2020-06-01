@@ -13,15 +13,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class UsuarisDAO {
+    /**
+     * Llista tots els Usuaris de la base de dades
+     * @return LlistaUsuaris
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static LlistaUsuaris llistar() throws SQLException, ClassNotFoundException
     {
         LlistaUsuaris llistatUsuaris = new LlistaUsuaris();
             
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             Statement stmt = con.createStatement();
             
             String sql = "SELECT * FROM usuaris";
@@ -48,9 +55,15 @@ public class UsuarisDAO {
             
             return llistatUsuaris;
     }
-    
+    /**
+     * Cerca el Usuari al que correspon el id passat per paràmetre
+     * @param id
+     * @return Usuari
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static Usuari buscar(int id) throws SQLException, ClassNotFoundException{
-        Connection con = Conexio.initializeDatabase(); 
+        Connection con = Connexio.initializeDatabase(); 
         Statement stmt = con.createStatement();
 
         String sql = "SELECT * FROM usuaris WHERE id_usuari='" + id + "'";

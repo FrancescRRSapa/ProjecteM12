@@ -8,19 +8,32 @@ package Model;
 import java.util.ArrayList;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class LlistaExamens {
+    /** Llista amb objectes de la classe Examen*/
     private ArrayList<Examen> llistatExamens = new ArrayList<Examen>();
+    /**
+     * Afegeix un Examen
+     * @param e 
+     */
     public void add(Examen e){
         llistatExamens.add(e);
     }
-    
+    /**
+     * Número de Examens que incorpora la llista
+     * @return int
+     */
     public int size(){
         return llistatExamens.size();
     }
-    
+    /**
+     * Retorna un Examen de la llista
+     * @param i
+     * @return Examen
+     */
     public Examen get(int i){
         return llistatExamens.get(i);
     }

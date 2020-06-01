@@ -12,22 +12,38 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
-public class Conexion {
+public class Connexio {
     String driver;
     String url;
     String usuari;
     String pwd;
-    
-    public Conexion(){
-        driver = "com.mysql.jdbc.Driver";
-        url = "jdbc:mysql://localhost:3306/practicam12";
-        usuari = "root";
-        pwd = "";
+    /**
+     * Connexió a la base de dades
+     * @return Connection
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
+    public static Connection initializeDatabase() throws SQLException, ClassNotFoundException 
+    { 
+        String dbDriver = "com.mysql.jdbc.Driver"; 
+        String mysqlConnUrl = "jdbc:mysql://localhost:3306/projecte";
+        String dbUsername = "root"; 
+        String dbPassword = ""; 
+        Class.forName(dbDriver); 
+        Connection con = DriverManager.getConnection(mysqlConnUrl, dbUsername, dbPassword); 
+        return con; 
+        
     }
-    
+    /**
+     * Comprova si un Usuari és troba a la base de dades i el seu rol
+     * @param u
+     * @param c
+     * @return String rol
+     */
     public String loguear(String u, String c){
         Connection conn;
         PreparedStatement pst;
@@ -47,17 +63,6 @@ public class Conexion {
             
         }
         return tipusUsuari;
-        
-    }
-    public static Connection initializeDatabase() throws SQLException, ClassNotFoundException 
-    { 
-        String dbDriver = "com.mysql.jdbc.Driver"; 
-        String mysqlConnUrl = "jdbc:mysql://localhost:3306/practicam12";
-        String dbUsername = "root"; 
-        String dbPassword = ""; 
-        Class.forName(dbDriver); 
-        Connection con = DriverManager.getConnection(mysqlConnUrl, dbUsername, dbPassword); 
-        return con; 
         
     }
 }

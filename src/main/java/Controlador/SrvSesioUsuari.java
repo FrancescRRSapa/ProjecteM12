@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import DAO.Conexio;
+import DAO.Connexio;
 import DAO.LoginDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,8 +20,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 @WebServlet(name = "SrvSesioUsuari", urlPatterns = {"/SrvSesioUsuari"})
 public class SrvSesioUsuari extends HttpServlet {

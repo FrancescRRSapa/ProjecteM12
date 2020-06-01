@@ -19,8 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 @WebServlet(name = "SrvLlistarReserva", urlPatterns = {"/SrvLlistarReserva"})
 public class SrvLlistarReserva extends HttpServlet {

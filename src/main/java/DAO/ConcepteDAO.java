@@ -15,12 +15,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class ConcepteDAO {
+    /**
+     * Insereix un Concepte a la base de dades
+     * @param c
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void inserir(Concepte c) throws SQLException, ClassNotFoundException{
-        try (Connection con = Conexio.initializeDatabase()) {
+        try (Connection con = Connexio.initializeDatabase()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO concepte VALUES(?,?,?,?)");
             ps.setInt(1, c.getIdConcepte());
             ps.setString(2, c.getNom());
@@ -32,12 +39,17 @@ public class ConcepteDAO {
             ps.close();
         }
     }
-    
+    /**
+     * Llista tots els conceptes de la base de dades
+     * @return LlistaConceptes
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static LlistaConceptes llistar() throws SQLException, ClassNotFoundException
     {
         LlistaConceptes llistatConceptes = new LlistaConceptes();
             
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             Statement stmt = con.createStatement();
             
             String sql = "SELECT * FROM concepte";
@@ -57,10 +69,15 @@ public class ConcepteDAO {
             
             return llistatConceptes;
     }
-    
+    /**
+     * Esborra el Concepte de la base de dades que correspon al id
+     * @param id
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             PreparedStatement st = con.prepareStatement("DELETE FROM concepte WHERE id_concepte = '" + id + "'"); 
 
             st.executeUpdate(); 
@@ -68,9 +85,14 @@ public class ConcepteDAO {
             st.close(); 
             con.close(); 
     }
-    
+    /**
+     * Modifica un concepte amb l'informació passada per parametre
+     * @param c
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void modificar(Concepte c) throws SQLException, ClassNotFoundException{
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
 
             PreparedStatement pt = con.prepareStatement("UPDATE concepte SET nom = '" + c.getNom()
                                                             + "', data_alta= '" + c.getDataAlta()

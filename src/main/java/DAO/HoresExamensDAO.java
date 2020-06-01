@@ -15,13 +15,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class HoresExamensDAO {
-    
+    /**
+     * Insereix una nova HoraExamen a la base de dades
+     * @param h
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void inserir(HoraExamen h) throws SQLException, ClassNotFoundException{
-        try (Connection con = Conexio.initializeDatabase()) {
+        try (Connection con = Connexio.initializeDatabase()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO hora_examen VALUES(?,?,?)");
             ps.setDate(1, h.getDiaSetmana());
             ps.setString(2, h.getHora());
@@ -32,12 +38,17 @@ public class HoresExamensDAO {
             ps.close();
         }
     }
-    
+    /**
+     * Llista totes les HoraExamen de la base de dades
+     * @return
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static LlistaHoresExamens llistar() throws SQLException, ClassNotFoundException
     {
         LlistaHoresExamens llistatHoresExamens = new LlistaHoresExamens();
             
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             Statement stmt = con.createStatement();
             
             String sql = "SELECT * FROM hora_examen";
@@ -57,9 +68,15 @@ public class HoresExamensDAO {
             
             return llistatHoresExamens;
     }
-    
+    /**
+     * busca una horaExamen en especific
+     * @param id
+     * @return HoraExamen
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static HoraExamen buscar(int id) throws SQLException, ClassNotFoundException{
-        Connection con = Conexio.initializeDatabase(); 
+        Connection con = Connexio.initializeDatabase(); 
         Statement stmt = con.createStatement();
 
         String sql = "SELECT * FROM hora_examen WHERE id_hora_examen='" + id + "'";
@@ -77,10 +94,15 @@ public class HoresExamensDAO {
         
         return h;
     }
-    
+    /**
+     * Esborra la horaExamen que correspon al id
+     * @param id
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             PreparedStatement st = con.prepareStatement("DELETE FROM hora_examen WHERE id_hora_examen = '" + id + "'"); 
 
             st.executeUpdate(); 
@@ -88,9 +110,14 @@ public class HoresExamensDAO {
             st.close(); 
             con.close(); 
     }
-    
+    /**
+     * Modifica la horaExamen amb l'informació pasada per paràmetre
+     * @param h
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void modificar(HoraExamen h) throws SQLException, ClassNotFoundException{
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
 
             PreparedStatement pt = con.prepareStatement("UPDATE hora_examen SET dia_setmana = '" + h.getDiaSetmana()
                                                             + "', hora= '" + h.getHora()

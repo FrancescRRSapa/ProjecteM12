@@ -15,12 +15,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class TarifaDAO {
+    /**
+     * Insereix una Tarifa a la base de dades
+     * @param t
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void inserir(Tarifa t) throws SQLException, ClassNotFoundException{
-        try (Connection con = Conexio.initializeDatabase()) {
+        try (Connection con = Connexio.initializeDatabase()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO tarifa VALUES(?,?,?,?,?,?)");
             ps.setInt(1, t.getIdGrupPartit());
             ps.setInt(2, t.getIdConcepte());
@@ -34,12 +41,17 @@ public class TarifaDAO {
             ps.close();
         }
     }
-    
+    /**
+     * Llista les tarifes existents a la base de dades
+     * @return LlistaTarifes
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static LlistaTarifes llistar() throws SQLException, ClassNotFoundException
     {
         LlistaTarifes llistatTarifes = new LlistaTarifes();
             
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             Statement stmt = con.createStatement();
             
             String sql = "SELECT * FROM tarifa";
@@ -62,10 +74,15 @@ public class TarifaDAO {
             
             return llistatTarifes;
     }
-    
+    /**
+     * Esborra la tarifa que correspon al id de la base de dades
+     * @param id
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             PreparedStatement st = con.prepareStatement("DELETE FROM tarifa WHERE id_tarifa = '" + id + "'"); 
 
             st.executeUpdate(); 
@@ -73,9 +90,14 @@ public class TarifaDAO {
             st.close(); 
             con.close(); 
     }
-    
+    /**
+     * Modifica la tarifa amb les dades passades per paràmetre
+     * @param t
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
     public static void modificar(Tarifa t) throws SQLException, ClassNotFoundException{
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
 
             PreparedStatement pt = con.prepareStatement("UPDATE tarifa SET id_grup_partit = '" + t.getIdGrupPartit()
                                                             + "', id_concepte = '" + t.getIdConcepte()

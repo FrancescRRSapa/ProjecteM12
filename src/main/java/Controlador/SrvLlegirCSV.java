@@ -22,8 +22,9 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
 
 /**
- *
- * @author Francesc
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 @WebServlet(name = "llegirCSVServlet", urlPatterns = {"/llegirCSVServlet"})
 @MultipartConfig

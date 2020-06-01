@@ -16,12 +16,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- *
- * @author ferna
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
 public class ExamensDAO {
     public static void inserir(Examen e) throws SQLException, ClassNotFoundException{
-        try (Connection con = Conexio.initializeDatabase()) {
+        try (Connection con = Connexio.initializeDatabase()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO usuari_certificacio VALUES(?,?,?,?)");
             ps.setInt(1, e.getId_usuari());
             ps.setInt(2, e.getId_certificacio());
@@ -38,7 +39,7 @@ public class ExamensDAO {
     {
         LlistaExamens llistatExamens = new LlistaExamens();
             
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             Statement stmt = con.createStatement();
             
             String sql = "SELECT * FROM usuari_certificacio";
@@ -67,7 +68,7 @@ public class ExamensDAO {
     
     public static void esborrar(String id) throws SQLException, ClassNotFoundException
     {
-            Connection con = Conexio.initializeDatabase(); 
+            Connection con = Connexio.initializeDatabase(); 
             PreparedStatement st = con.prepareStatement("DELETE FROM usuari_certificacio WHERE id_examen = '" + id + "'"); 
 
             st.executeUpdate(); 
@@ -77,7 +78,7 @@ public class ExamensDAO {
     }
     
     public static void pagat(Examen e,Codi c) throws SQLException, ClassNotFoundException{
-            Connection con = Conexio.initializeDatabase();
+            Connection con = Connexio.initializeDatabase();
             
             PreparedStatement pt = con.prepareStatement("UPDATE usuari_certificacio SET pagat = '" + true
                                                             + "', data_pagament= '" + new Date(System.currentTimeMillis())
@@ -92,7 +93,7 @@ public class ExamensDAO {
     }
     
     public static void qualificat(Examen e, String resultat) throws SQLException, ClassNotFoundException{
-            Connection con = Conexio.initializeDatabase();
+            Connection con = Connexio.initializeDatabase();
             
             PreparedStatement pt = con.prepareStatement("UPDATE usuari_certificacio SET  estat= '" + resultat
                                                             + "' WHERE id_examen = '" + e.getId_examen() + "'"); 

@@ -11,10 +11,18 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- *
- * @author Francesc
+ * @author Sergio Fernández s.fernandez@sapalomera.cat
+ * @author Francesc Roca f.roca@sapalomera.cat
+ * @version 1.0 01/06/2020
  */
+
+
 public class LlegirCSV {
+    /**
+    * Llegeix un fitxer csv i l'inforpora al ArrayList
+    * @param file
+    * @return ArrayList<String[]>
+    */
     public static ArrayList<String[]> llegirDades (InputStream file) {
         ArrayList<String[]> tota_linia = new ArrayList<String[]>();
         //ArrayList<String> tota_linia = new ArrayList<String>();
