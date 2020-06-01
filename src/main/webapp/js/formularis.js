@@ -1,6 +1,7 @@
 "use strict";
 /**
  * @author Francesc Roca
+ * @author Sergio Fernandez
  * @returns {undefined}
  * Funció que torna a la pàgina anterior.
  */
@@ -10,6 +11,7 @@ function returnToPreviousPage() {
 
 /**
  * @author Francesc Roca
+ * @author Sergio Fernandez
  * @param {type} e
  * @returns {undefined}
  * Funció per comprovar els camps del formulari són correctes, si no, evitem que es pugui enviar el formulari.
@@ -47,6 +49,7 @@ function formulariConfiguracio(){
 
 /**
  * @author Francesc Roca
+ * @author Sergio Fernandez
  * @param {type} email
  * @returns {Boolean}
  * Funció que retorna true o false depent de si el correu inserit és correcte o no.
