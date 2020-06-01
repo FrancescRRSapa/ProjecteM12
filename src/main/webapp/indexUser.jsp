@@ -16,7 +16,6 @@
         <link rel="stylesheet" type="text/css" href="css/calendari.css">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/script.js"></script>
-        <script src="js/calendari.js"></script>
     </head>
     <body>
         <header>
@@ -78,6 +77,13 @@
 
 <script>
 var actual=new Date();
+/**
+ * @author Francesc Roca
+ * @author Sergio Fernandez
+ * @param {type} year
+ * @param {type} month
+ * @returns {undefined}
+ */
 function mostrarCalendario(year,month)
 {
 var now=new Date(year,month-1,1);
