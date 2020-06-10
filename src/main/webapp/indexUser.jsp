@@ -25,6 +25,7 @@
                     Institut Sa Palomera
                 </div>
                 <nav>
+                    <a href="reservarHora.jsp"><h5>Reservar Data</h5></a>
             <%
                HttpSession sesion = request.getSession();
                String usuario;
