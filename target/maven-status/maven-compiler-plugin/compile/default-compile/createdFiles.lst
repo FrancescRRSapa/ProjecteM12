@@ -1,12 +1,11 @@
 Model\GrupPartit.class
 Controlador\SrvConfiguracio.class
-DAO\ConnexioBDD.class
 Model\CodiMTA.class
 Model\LlistaHoresExamens.class
 DAO\ExamensDAO.class
 Model\Mail.class
+DAO\Connexio.class
 Model\LlistaExamens.class
-DAO\Conexio.class
 Model\Configuracio.class
 Model\Mail$1.class
 Model\LlistaCodis.class
@@ -16,7 +15,6 @@ Model\Examen.class
 DAO\UsuarisDAO.class
 Controlador\SrvSesioUsuari.class
 Model\Reserva.class
-DAO\Conexion.class
 Model\Concepte.class
 DAO\ConcepteDAO.class
 Model\LlistaConceptes.class

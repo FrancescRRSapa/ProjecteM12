@@ -1,4 +1,4 @@
-<%@page import="DAO.Conexio"%>
+<%@page import="DAO.Connexio"%>
 <%@page session ="true" %>
 <!DOCTYPE html>
 <html lang="en">
