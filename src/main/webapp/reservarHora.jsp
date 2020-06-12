@@ -56,6 +56,9 @@
                 <input type="submit" name="enviar">
             </form>
         </div>
+        <footer id="footer">
+            Sergio Fernández i Francesc Roca - 2n DAW 2019/2020
+        </footer>
     </body>
 </html>
 <script>

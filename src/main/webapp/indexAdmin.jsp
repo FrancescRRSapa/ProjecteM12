@@ -30,7 +30,7 @@
                     <a href="SrvConfiguracio">Configuracio</a>
         <%
             HttpSession sesion = request.getSession();
-            String usuario;
+            String usuario = "";
             String tipusUsuari;
             
             if(sesion.getAttribute("user")!= null && sesion.getAttribute("tipusUsuari")!= null){
@@ -47,5 +47,14 @@
                 </nav>
             </div> 
         </header>
+                <div>
+                    <p>
+                        Benvingut administrador/a <% out.print(usuario); %><br>
+                        Utilitza el menú de la part superior de la pàgina per entrar a les diferents pàgines de configuració del lloc.
+                    </p>
+                </div>
+                        <footer id="footer">
+                            Sergio Fernández i Francesc Roca - 2n DAW 2019/2020
+                        </footer>
     </body>
 </html>
