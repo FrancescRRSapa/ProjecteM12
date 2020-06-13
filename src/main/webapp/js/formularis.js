@@ -17,8 +17,6 @@ function returnToPreviousPage() {
  * Funció per comprovar els camps del formulari són correctes, si no, evitem que es pugui enviar el formulari.
  */
 function formulariConfiguracio(){
-    console.log("He entrat!");
-    console.log(document.getElementById('codisMin').value);
     var codisMin = document.getElementById('codisMin').value;
     var alumnesAula = document.getElementById("alumnesAula").value;
     var direccioCorreu = document.getElementById("direccioCorreu").value;
@@ -45,6 +43,22 @@ function formulariConfiguracio(){
     }
     
     return true; 
+}
+
+/**
+ * Funció per validar el correu
+ * @author Francesc Roca
+ * @author Sergio Fernández
+ * @param {type} e
+ * @returns {Boolean}
+ */
+function validarCorreuCodisAdmin(){
+    var direccioCorreu = document.getElementById("direccioCorreu").value;
+    if(!validateEmail(direccioCorreu)){
+        alert("El correu escrit no és correcte.");
+        returnToPreviousPage();
+        return false;
+    }
 }
 
 /**
