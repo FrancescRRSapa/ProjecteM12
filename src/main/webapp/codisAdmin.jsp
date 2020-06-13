@@ -52,8 +52,8 @@
                     CSV File:<input type="file" name="file" id="file">
                     <br>
                     <label for="tipusCodi">Tipus de codis a inserir:</label>
-                    <br>
                     <select name="tipusCodi">
+                        <option></option>
                         <option name="MOS" value="MOS">Codis MOS</option>
                         <option name="MTA" value="MTA">Codis MTA</option>
                     </select>
@@ -64,9 +64,14 @@
         </details>
         <details>
             <summary>Esborrar codis</summary>
+            <%
+                
+            %>
             <fieldset>
                 <form action="SrvBorrarCodis" method="POST">
-
+                    <select name='tipus' id='tipus'>
+                        <% %>
+                    </select>
                 </form>
             </fieldset>
         </details>
@@ -77,9 +82,8 @@
                     <label for="correu">Correu Usuari</label>
                     <input type="email" name="correu" id="direccioCorreu" placeholder="elseu@correu.com"><br>
                     <label for="certificacio">Quina certificació vols escollir?</label>
-                    <br>
                     <select name="certificacio" id="certificacio">
-                        <option value=""></option>
+                        <option style="display:none"></option>
                         <option value="MOS">MOS</option>
                         <option value="MTA">MTA</option>
                     </select><br>
