@@ -25,12 +25,12 @@ public class LlistaCodis {
         LlistaCodis llistatCodis = new LlistaCodis();
         ArrayList<String[]> dades = (ArrayList<String[]>) LlegirCSV.llegirDades(file);
             for(int i = 0; i < dades.size(); i++) {
-                if(dades.get(i)[3] != null){
+                if(dades.get(i).length == 4){
                     CodiMOS codi = new CodiMOS(dades.get(i)[3], dades.get(i)[0],dades.get(i)[1], dades.get(i)[2]);
-                    llistaCodis.add(codi);
+                    llistatCodis.add(codi);
                 }else{
                     CodiMTA codi = new CodiMTA(dades.get(i)[0],dades.get(i)[1], dades.get(i)[2]);
-                    llistaCodis.add(codi);
+                    llistatCodis.add(codi);
                 }
             }
             return llistatCodis;

@@ -33,6 +33,7 @@ public class Codi {
         this.data = data;
         this.usuariId = usuariId;
     }
+    
     public Codi(String usuari, String password, String practiceTest){
         this.usuari = usuari;
         this.password = password;

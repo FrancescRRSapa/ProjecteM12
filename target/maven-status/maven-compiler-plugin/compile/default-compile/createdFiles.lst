@@ -16,7 +16,6 @@ DAO\UsuarisDAO.class
 Controlador\SrvSesioUsuari.class
 Model\Reserva.class
 Model\Concepte.class
-.netbeans_automatic_build
 DAO\ConcepteDAO.class
 Model\LlistaConceptes.class
 Model\HoraExamen.class

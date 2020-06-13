@@ -46,7 +46,7 @@
         </header>
         <h1>Afegir nous codis a la base de dades</h1>
         <form method="post" action="SrvLlegirCSV" enctype="multipart/form-data">
-            CSV File:<input type="file" name="fileMOS" id="fileMOS">
+            CSV File:<input type="file" name="file" id="file">
             <br>
             <label for="tipusCodi">Tipus de codis a inserir:</label>
             <br>

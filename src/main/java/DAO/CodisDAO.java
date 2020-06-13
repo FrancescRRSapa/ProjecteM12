@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
 /**
  * @author Sergio Fernández s.fernandez@sapalomera.cat
  * @author Francesc Roca f.roca@sapalomera.cat
@@ -36,7 +37,7 @@ public class CodisDAO {
                 st.setString(2, llistaMOS.get(i).getPassword()); 
                 st.setString(3, llistaMOS.get(i).getPracticeTest()); 
                 st.setString(4, llistaMOS.get(i).getCodiExamen());
-                st.setDate(5, new Date(System.currentTimeMillis()));
+                st.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
                 st.setInt(6, 0);
                 
                 st.executeUpdate(); 
@@ -146,9 +147,9 @@ public class CodisDAO {
                 st.setString(1, llistaMTA.get(i).getUsuari()); 
                 st.setString(2, llistaMTA.get(i).getPassword()); 
                 st.setString(3, llistaMTA.get(i).getPracticeTest());
-                st.setDate(4, new Date(System.currentTimeMillis()));
+                st.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
                 st.setInt(5, 0);
-                st.executeUpdate(); 
+                st.executeUpdate();
                 con.close();
                 st.close(); 
             }

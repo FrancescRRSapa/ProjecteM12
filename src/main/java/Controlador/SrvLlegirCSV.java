@@ -26,7 +26,7 @@ import javax.servlet.http.Part;
  * @author Francesc Roca f.roca@sapalomera.cat
  * @version 1.0 01/06/2020
  */
-@WebServlet(name = "llegirCSVServlet", urlPatterns = {"/llegirCSVServlet"})
+@WebServlet(name = "SrvLlegirCSV", urlPatterns = {"/SrvLlegirCSV"})
 @MultipartConfig
 public class SrvLlegirCSV extends HttpServlet {
 
@@ -68,8 +68,7 @@ public class SrvLlegirCSV extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
+        processRequest(request, response);
     }
 
     /**
@@ -87,15 +86,16 @@ public class SrvLlegirCSV extends HttpServlet {
         //LlistaCodisMOS lc = new LlistaCodisMOS();
         //LlistaCodisMTA llistatMTA = new LlistaCodisMTA();
         LlistaCodis lc = new LlistaCodis();
-        Part filePartMOS = request.getPart("fileMOS");
+        Part filePart = request.getPart("file");
         String tipusCodi = request.getParameter("tipusCodi");
         if("MOS".equals(tipusCodi)){
-            InputStream fileContent = filePartMOS.getInputStream();
+            InputStream fileContent = filePart.getInputStream();
             CodisDAO.inserirCodisMOS(lc.llegirCodis(fileContent));
         }else if("MTA".equals(tipusCodi)){
-            InputStream fileContent = filePartMOS.getInputStream();
+            InputStream fileContent = filePart.getInputStream();
             CodisDAO.inserirCodisMTA(lc.llegirCodis(fileContent));
         }
+        response.sendRedirect("indexAdmin.jsp");
         //Part filePartMTA = request.getPart("fileMTA");
         //if(filePartMOS != null){
             //InputStream fileContent = filePartMOS.getInputStream();
