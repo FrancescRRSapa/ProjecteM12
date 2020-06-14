@@ -4,6 +4,8 @@
     Author     : Francesc
 --%>
 
+<%@page import="java.sql.Timestamp"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session ="true" %>
 <!DOCTYPE html>
@@ -15,7 +17,6 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="icon" href="img/logoSapa.png">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="js/script.js"></script>
         <script src="js/formularis.js"></script>
     </head>
     <body>
@@ -53,7 +54,6 @@
                     <br>
                     <label for="tipusCodi">Tipus de codis a inserir:</label>
                     <select name="tipusCodi">
-                        <option></option>
                         <option name="MOS" value="MOS">Codis MOS</option>
                         <option name="MTA" value="MTA">Codis MTA</option>
                     </select>
@@ -65,13 +65,41 @@
         <details>
             <summary>Esborrar codis</summary>
             <%
-                
+                ArrayList<Timestamp> llistaDatesMTA = (ArrayList<Timestamp>)request.getAttribute("llistaDatesMTA");
+                ArrayList<Timestamp> llistaDatesMOS = (ArrayList<Timestamp>)request.getAttribute("llistaDatesMOS");
             %>
             <fieldset>
-                <form action="SrvBorrarCodis" method="POST">
-                    <select name='tipus' id='tipus'>
-                        <% %>
-                    </select>
+                <script>
+                function actualitza(){
+                    var x = document.getElementById("tipus").value;
+                    if(x == 'mta'){
+                        document.getElementById("seleccioData").innerHTML = ""
+                        <%for(int i=0; i < llistaDatesMTA.size(); i++){ %>
+                           + "<option value='<%=llistaDatesMTA.get(i) %>'><%=llistaDatesMTA.get(i) %></option>"
+                        <% } %>;
+                    }else if(x == 'mos'){
+                        document.getElementById("seleccioData").innerHTML = ""
+                        <%for(int i=0; i < llistaDatesMOS.size(); i++){ %>
+                            + "<option value='<%=llistaDatesMOS.get(i) %>'><%=llistaDatesMOS.get(i) %></option>"
+                        <% } %>;
+                    }
+                }
+                </script>
+                <form action="SrvEsborrarCodis" method="POST" onsubmit="return confirm('Estas segur que vols eliminar els codis. No és poden recuperar')">
+                    <div>
+                        <select name='tipus' id='tipus' onchange="actualitza()">
+                            <option value="mta">Codis MTA</option>
+                            <option value="mos">Codis MOS</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name='seleccioData' id='seleccioData'>
+                            <%for(int i=0; i < llistaDatesMTA.size(); i++){ %>
+                                <option value="<%=llistaDatesMTA.get(i) %>"><%=llistaDatesMTA.get(i) %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                        <div><button>Esborrar</button></div>
                 </form>
             </fieldset>
         </details>

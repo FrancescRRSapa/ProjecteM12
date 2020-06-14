@@ -15,6 +15,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 /**
  * @author Sergio Fernández s.fernandez@sapalomera.cat
  * @author Francesc Roca f.roca@sapalomera.cat
@@ -88,10 +89,32 @@ public class CodisDAO {
         return llista;
     }
     /**
+     * Recerca els diferents instants en que s'han pujat el codi
+     * @param mta/mos
+     * @return LlistCodis
+     */
+    public static ArrayList<Timestamp> datesCodis(String tipus) throws SQLException, ClassNotFoundException{
+        ArrayList<Timestamp> llistaDates = new ArrayList();
+        Connection con = Connexio.initializeDatabase();
+        Statement stmt = con.createStatement();
+
+        String sql = "SELECT DISTINCT date FROM codis_" + tipus;
+        ResultSet rs = stmt.executeQuery(sql);
+    while(rs.next()){
+            llistaDates.add(rs.getTimestamp("date"));
+        }
+        rs.close();
+        stmt.close();
+        con.close();
+        
+        return llistaDates;
+    }
+    
+    /**
      * Esborra els codis de una data determinada
      * @param data 
      */
-    public static void esborrarCodisMOS(Date data)
+    public static void esborrarCodisMOS(Timestamp data)
     {
         try
         {
@@ -200,7 +223,7 @@ public class CodisDAO {
      * Esborra els codisMTA que corresponen a una data determinada
      * @param data 
      */
-    public static void esborrarCodisMTA(Date data)
+    public static void esborrarCodisMTA(Timestamp data)
     {
         try
         {
