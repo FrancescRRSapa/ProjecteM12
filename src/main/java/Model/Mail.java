@@ -58,25 +58,24 @@ public class Mail {
         message.setFrom(new InternetAddress(props.getProperty("from")));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
         message.setSubject("Codis");
-        BodyPart texto = new MimeBodyPart();
-        texto.setText(content);
+        MimeBodyPart texto = new MimeBodyPart();
+        texto.setContent(content, "text/html");
         BodyPart adjunto = new MimeBodyPart();
         
-        adjunto.setDataHandler(new DataHandler(new FileDataSource(".\\src\\main\\java\\Fitxers\\Manual de uso del Practice Test - Con entorno.pdf")));
-        adjunto.setFileName("Manual de uso del Practice Test - Con entorno.pdf");
+        //adjunto.setDataHandler(new DataHandler(new FileDataSource(".\\src\\main\\java\\Fitxers\\Manual de uso del Practice Test - Con entorno.pdf")));
+        //adjunto.setFileName("Manual de uso del Practice Test - Con entorno.pdf");
         MimeMultipart multiParte = new MimeMultipart();
         multiParte.addBodyPart(texto);
-        multiParte.addBodyPart(adjunto);
+        //multiParte.addBodyPart(adjunto);
         message.setContent(multiParte);
         Transport.send(message);
 
         //System.out.println("mensaje enviado!");
     }
-    /*
+
     public static void main(String[] args) throws MessagingException, ClassNotFoundException, SQLException, Exception {
         Usuari u = UsuarisDAO.buscar(1);
         Configuracio c = ConfiguracioDAO.llistar();
         Mail.enviarCodis(c.getDireccioCorreu() ,u.getCorreu(), c.getCorreuEnviaCodis(), c.getContrasenyaCorreu());
     }
-    */
 }
