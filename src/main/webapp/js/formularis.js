@@ -2,16 +2,6 @@
 /**
  * @author Francesc Roca
  * @author Sergio Fernandez
- * @returns {undefined}
- * Funció que torna a la pàgina anterior.
- */
-function returnToPreviousPage() {
-    window.history.back();
-}
-
-/**
- * @author Francesc Roca
- * @author Sergio Fernandez
  * @param {type} e
  * @returns {undefined}
  * Funció per comprovar els camps del formulari són correctes, si no, evitem que es pugui enviar el formulari.
@@ -26,19 +16,19 @@ function formulariConfiguracio(){
     
     if(isNaN(codisMin) || codisMin < 0){
         alert("Els codis mínims no són correctes.");
-        returnToPreviousPage();
+        location.reload();
         return false;
     }
     
     if(isNaN(alumnesAula) || alumnesAula < 0){
         alert("La quantitat d'alumnes no és correcte.");
-        returnToPreviousPage();
+       location.reload();
         return false;
     }
     
     if(!validateEmail(direccioCorreu)){
         alert("El correu escrit no és correcte.");
-        returnToPreviousPage();
+        location.reload();
         return false;
     }
     
@@ -56,7 +46,7 @@ function validarCorreuCodisAdmin(){
     var direccioCorreu = document.getElementById("direccioCorreu").value;
     if(!validateEmail(direccioCorreu)){
         alert("El correu escrit no és correcte.");
-        returnToPreviousPage();
+        location.reload();
         return false;
     }
 }

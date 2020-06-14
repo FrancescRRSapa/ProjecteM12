@@ -28,6 +28,7 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<link rel="icon" href="img/logoSapa.png">
 </head>
 <body>
     <div class="limiter">
