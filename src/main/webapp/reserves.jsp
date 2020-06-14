@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Reserves</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="icon" href="img/logoSapa.png">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/script.js"></script>
     </head>
@@ -55,12 +56,12 @@
             <% 
                 LlistaReserves lc = (LlistaReserves) request.getAttribute("llistaReserves");
                 for(int i = 0; i < lc.size(); i++){
-                    out.print("80<tr>");
+                    out.print("<tr>");
                     out.print("<td>" + lc.get(i).getIdReserva() + "</td><td>" + lc.get(i).getUsuari().getNom() + "</td><td>"  + lc.get(i).getHoraExamen().getDiaSetmana() + "-" + lc.get(i).getHoraExamen().getHora() +  "</td>");
                     out.print("</tr>");
                 }
             %>
-        </table>
+            </table>
         </div>
         <footer id="footer">
             Sergio Fernández i Francesc Roca - 2n DAW 2019/2020

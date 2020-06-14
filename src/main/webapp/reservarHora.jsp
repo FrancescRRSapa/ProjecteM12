@@ -12,11 +12,12 @@
         <title>Reserva examen</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/calendari.css">
+        <link rel="icon" href="img/logoSapa.png">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/script.js"></script>
     </head>
     <body onload="loadFunction()">
-<header>
+        <header>
             <div class="wrapper">
                 <div class="logo">
                     <!-- <img src="logoSapa.png" id="sapa"> -->
@@ -41,7 +42,7 @@
             </div> 
         </header>
         <div>
-            <form action="" method="POST">
+            <form action="SrvReservarHora" method="POST">
                 <label for="dia_setmana">Dia a escollir:</label><br>
                 <input type="date" id="dia_setmana" name="dia_setmana" required><br>
                 <label for="hora">Hora:</label><br>
@@ -52,7 +53,7 @@
                     <option value="MOS">MOS</option>
                     <option value="MTA">MTA</option>
                 </select><br><br>
-                <input type="text" name="nomusuari" value="<% out.print(usuario); %>" hidden>
+                <!-- Input per enviar al servlet el nom del usuari, es trobe ocult a l'usuari --><input type="text" name="nomusuari" value="<% out.print(usuario); %>" hidden>
                 <input type="submit" name="enviar">
             </form>
         </div>

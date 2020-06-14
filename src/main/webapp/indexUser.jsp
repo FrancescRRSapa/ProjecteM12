@@ -14,8 +14,10 @@
         <title>Proctor</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/calendari.css">
+        <link rel="icon" href="img/logoSapa.png">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/formularis.js"></script>
     </head>
     <body>
         <header>
@@ -44,9 +46,8 @@
         </header>
         <div id="demanarCodi">
             <h2>Solicitar nou codi</h2>
-            <form action="SrvDemanarCodi" method="POST">
+            <form action="SrvDemanarCodi" method="POST" onsubmit='return validarCorreuCodisAdmin()'>
                 <label for="certificacio">Quina certificació vols escollir?</label>
-                <br>
                 <select name="certificacio" id="certificacio">
                     <option value=""></option>
                     <option value="MOS">MOS</option>
@@ -55,7 +56,7 @@
                 <br>
                 <label for="correu">Escriu el teu correu electrònic</label>
                 <br>
-                <input type="email" placeholder="elteu@correu.com">
+                <input type="email" id='direccioCorreu' placeholder="elteu@correu.com">
                 <br>
                 <input type="submit">
             </form>

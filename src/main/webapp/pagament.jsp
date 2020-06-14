@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin. pagament</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="icon" href="img/logoSapa.png">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/script.js"></script>
     </head>
