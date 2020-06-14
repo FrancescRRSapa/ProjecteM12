@@ -32,6 +32,7 @@ Model\Tarifa.class
 Controlador\SrvLlistarReserva.class
 DAO\CodisDAO.class
 Model\LlistaGrupsPartits.class
+Controlador\SrvDataCodis.class
 Model\Usuari.class
 Controlador\SrvLlegirCSV.class
 Model\CodiMOS.class

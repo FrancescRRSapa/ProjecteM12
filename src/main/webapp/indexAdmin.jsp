@@ -23,7 +23,7 @@
                     Institut Sa Palomera
                 </div>
                 <nav>
-                    <a href="codisAdmin.jsp">Admin. codis</a>
+                    <a href="SrvDataCodis">Admin. codis</a>
                     <a href="certificacions.jsp">Certificacions</a>                                 
                     <a href="SrvLlistarReserva">Reserves</a>
                     <a href="pagament.jsp">Pagament</a>
