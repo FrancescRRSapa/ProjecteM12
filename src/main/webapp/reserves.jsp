@@ -55,12 +55,12 @@
             <% 
                 LlistaReserves lc = (LlistaReserves) request.getAttribute("llistaReserves");
                 for(int i = 0; i < lc.size(); i++){
-                    out.print("80<tr>");
+                    out.print("<tr>");
                     out.print("<td>" + lc.get(i).getIdReserva() + "</td><td>" + lc.get(i).getUsuari().getNom() + "</td><td>"  + lc.get(i).getHoraExamen().getDiaSetmana() + "-" + lc.get(i).getHoraExamen().getHora() +  "</td>");
                     out.print("</tr>");
                 }
             %>
-        </table>
+            </table>
         </div>
         <footer id="footer">
             Sergio Fernández i Francesc Roca - 2n DAW 2019/2020
