@@ -28,10 +28,12 @@
             <%
                HttpSession sesion = request.getSession();
                String usuario = "";
+               String id_usuari = "";
                String tipusUsuari;
 
                if(sesion.getAttribute("user")!= null && sesion.getAttribute("tipusUsuari")!= null){
                    usuario = sesion.getAttribute("user").toString();
+                   id_usuari = sesion.getAttribute("id_usuari").toString();
                    tipusUsuari = sesion.getAttribute("tipusUsuari").toString();
                    out.print("<a href='index.jsp?cerrar=true'><h5>Tancar sessió de " + usuario +"</h5></a> ");            
                }else{
@@ -53,7 +55,7 @@
                     <option value="MOS">MOS</option>
                     <option value="MTA">MTA</option>
                 </select><br><br>
-                <!-- Input per enviar al servlet el nom del usuari, es trobe ocult a l'usuari --><input type="text" name="nomusuari" value="<% out.print(usuario); %>" hidden>
+                <!-- Input per enviar al servlet el nom del usuari, es trobe ocult a l'usuari --><input type="number" name="id_usuari" value="<% out.print(id_usuari); %>" hidden>
                 <input type="submit" name="enviar">
             </form>
         </div>
