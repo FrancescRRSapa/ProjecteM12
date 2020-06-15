@@ -7,6 +7,7 @@ package Controlador;
 
 import DAO.Connexio;
 import DAO.LoginDAO;
+import Model.Usuari;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -86,7 +87,38 @@ public class SrvSesioUsuari extends HttpServlet {
                 String contrasenya = request.getParameter("pass");
                 HttpSession sesion = request.getSession();
             try {
-                switch(c.loguear(nombre, contrasenya)){
+                Usuari u = c.loguear2(nombre, contrasenya);
+                switch(u.getTipus_usuari()){
+                    case "administrador":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "administrador");
+                        sesion.setAttribute("id_usuari", u.getIdUsuari());
+                        response.sendRedirect("indexAdmin.jsp");
+                        break;
+                    case "professor":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "professor");
+                        sesion.setAttribute("id_usuari", u.getIdUsuari());
+                        response.sendRedirect("indexUser.jsp");
+                        break;
+                    case "alumne":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "alumne");
+                        sesion.setAttribute("id_usuari", u.getIdUsuari());
+                        response.sendRedirect("indexUser.jsp");
+                        break;
+                    case "extern":
+                        sesion.setAttribute("user", nombre);
+                        sesion.setAttribute("tipusUsuari", "extern");
+                        sesion.setAttribute("id_usuari", u.getIdUsuari());
+                        response.sendRedirect("indexUser.jsp");
+                        break;
+                    default:
+                        request.setAttribute("error", "usuari/contrasenya invàlida");
+                        request.getRequestDispatcher("index.jsp").forward(request, response);
+                        break;
+                }
+                /*switch(c.loguear(nombre, contrasenya)){
                     case "administrador":
                         sesion.setAttribute("user", nombre);
                         sesion.setAttribute("tipusUsuari", "administrador");
@@ -111,7 +143,7 @@ public class SrvSesioUsuari extends HttpServlet {
                         request.setAttribute("error", "usuari/contrasenya invàlida");
                         request.getRequestDispatcher("index.jsp").forward(request, response);
                         break;
-                }
+                }*/
             } catch (SQLException ex) {
                 Logger.getLogger(SrvSesioUsuari.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {

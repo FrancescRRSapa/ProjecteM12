@@ -6,6 +6,7 @@
 package DAO;
 
 import Model.Utilitats;
+import Model.Usuari;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +31,7 @@ public class LoginDAO {
         PreparedStatement pst;
         ResultSet rs;
         String tipusUsuari= "0";
-        String sql = "select tipus_usuari from usuaris where nom='" + u + "' and password='" + c + "'";
+        String sql = "select tipus_usuari, id_usuari from usuaris where nom='" + u + "' and password='" + c + "'";
         pst = conn.prepareStatement(sql);
         rs = pst.executeQuery();
         while(rs.next()){
@@ -41,6 +42,23 @@ public class LoginDAO {
         conn.close();            
         return tipusUsuari;
     }
+    public Usuari loguear2(String u, String c) throws SQLException, ClassNotFoundException{
+        Connection conn = Connexio.initializeDatabase();
+        PreparedStatement pst;
+        ResultSet rs;
+        String sql = "select * from usuaris where nom='" + u + "' and password='" + c + "'";
+        pst = conn.prepareStatement(sql);
+        rs = pst.executeQuery();
+        rs.next();
+
+        Usuari usuari = new Usuari(rs.getInt("id_usuari"), rs.getString("nom"), rs.getString("cognoms"), rs.getString("dni"), rs.getString("adreca"), rs.getString("correu"), rs.getString("telefon"), rs.getString("password"), rs.getString("tipus_usuari"), rs.getString("llista_examens"));
+        
+        rs.close();
+        pst.close();
+        conn.close();            
+        return usuari;
+    }
+    /*
     public static String tipusUsuari (String nomUsuari, String contrassenya) throws SQLException, ClassNotFoundException {
                 Connection con = Connexio.initializeDatabase();
                 Statement stmt = con.createStatement();
@@ -56,4 +74,5 @@ public class LoginDAO {
                 con.close();
 		return tipusUsuari;
 	}
+*/
 }
