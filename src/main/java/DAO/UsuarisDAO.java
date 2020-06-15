@@ -88,4 +88,28 @@ public class UsuarisDAO {
             
         return u;
     }
+    /**
+     * Cerca el id d'Usuari al que correspon al correu passat per paràmetre, si no existeix retorna 0
+     * @param id
+     * @return Usuari
+     * @throws SQLException
+     * @throws ClassNotFoundException 
+     */
+    public static int buscarId(String correu) throws SQLException, ClassNotFoundException{
+        int idUsuari = 0;
+        Connection con = Connexio.initializeDatabase(); 
+        Statement stmt = con.createStatement();
+
+        String sql = "SELECT * FROM usuaris WHERE correu='" + correu + "'";
+        ResultSet rs = stmt.executeQuery(sql);
+            
+        while(rs.next()){
+            idUsuari  = rs.getInt("id_usuari");
+        }
+
+        rs.close();
+        con.close(); 
+            
+        return idUsuari;
+    }
 }

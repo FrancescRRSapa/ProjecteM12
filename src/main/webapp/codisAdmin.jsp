@@ -85,7 +85,7 @@
                     }
                 }
                 </script>
-                <form action="SrvEsborrarCodis" method="POST" onsubmit="return confirm('Estas segur que vols eliminar els codis. No és poden recuperar')">
+                <form action="SrvEsborrarCodis" method="POST" onsubmit="return confirm('Estas segur que vols eliminar els codis? No és poden recuperar')">
                     <div>
                         <select name='tipus' id='tipus' onchange="actualitza()">
                             <option value="mta">Codis MTA</option>
@@ -106,15 +106,22 @@
         <details>
             <summary>Enviar codi a usuari</summary>
             <fieldset>
+                <% String error = (String)request.getAttribute("error"); %>
                 <form action="SrvEnviarCodi" method="POST" onsubmit="return validarCorreuCodisAdmin()">
                     <label for="correu">Correu Usuari</label>
-                    <input type="email" name="correu" id="direccioCorreu" placeholder="elseu@correu.com"><br>
+                    <input type="email" name="direccioCorreu" id="direccioCorreu" placeholder="elseu@correu.com"><br>
                     <label for="certificacio">Quina certificació vols escollir?</label>
                     <select name="certificacio" id="certificacio">
-                        <option style="display:none"></option>
                         <option value="MOS">MOS</option>
                         <option value="MTA">MTA</option>
                     </select><br>
+                    <% 
+                    if(error != null){
+                        %>
+                        <div><%=error %></div>
+                        <%
+                    }
+                    %>
                     <input type='submit'>
                 </form>
             </fieldset>
